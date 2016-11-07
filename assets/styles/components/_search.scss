@@ -1,0 +1,27 @@
+#search-form {
+  position: relative;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: 1025px) {
+    margin-right: initial;
+  }
+  &:before {
+    font-family: 'FontAwesome', serif;
+    content: "\f002";
+    position: absolute;
+    left: .5em;
+    bottom: 0;
+    top: 0;
+    color: $gray;
+    display: flex;
+    align-items: center;
+  }
+}
+
+input#search-input {
+  width: 100%;
+  padding-left: 1.75em;
+  //line-height: $fieldsHeight;
+  font-size: 1em;
+}

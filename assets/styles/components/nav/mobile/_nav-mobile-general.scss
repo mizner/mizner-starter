@@ -1,0 +1,14 @@
+$menuButtonHeight: 3em;
+
+#topMenuNav {
+  li {
+    width: 100%;
+    a {
+      display: block;
+      width: 100%;
+      line-height: $menuButtonHeight;
+      text-align: left;
+      padding-left: 2em;
+    }
+  }
+}

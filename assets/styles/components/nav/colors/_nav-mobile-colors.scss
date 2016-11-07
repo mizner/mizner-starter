@@ -1,0 +1,12 @@
+#menuButton {
+  background: $dark;
+  color: $light;
+}
+
+#primaryMenu {
+  padding-left: 0;
+  background: $gray;
+  li a {
+    border-bottom: 1px dotted $light;
+  }
+}

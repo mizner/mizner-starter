@@ -1,0 +1,11 @@
+#primaryMenu {
+  > li > a {
+    color: $gray;
+  }
+  > li > ul.sub-menu {
+    background: $dark;
+    a:hover {
+      background: green;
+    }
+  }
+}

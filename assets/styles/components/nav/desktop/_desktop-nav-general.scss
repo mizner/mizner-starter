@@ -1,0 +1,60 @@
+#menuButton {
+  display: none;
+}
+
+#primaryMenu {
+  padding: 0;
+  margin: 0;
+  li {
+    display: inline-block;
+  }
+  > li > a {
+    padding-left: .5em;
+    padding-right: .5em;
+    line-height: 2em;
+  }
+  ul.sub-menu {
+    text-align: left;
+    padding: 0;
+    li a {
+      line-height: 2em;
+    }
+    > li a {
+      padding: 0 1em 0 1em;
+    }
+    > li > ul > li a {
+      padding-left: 2em;
+    }
+    > li > ul > li > ul > li a {
+      padding-left: 3em;
+    }
+  }
+  > li > {
+    .sub-menu {
+      max-height: 0px;
+      overflow: hidden;
+      opacity: 0;
+      transition: 400ms ease all;
+      transition-delay: .75s;
+      position: absolute;
+      z-index: 9;
+      li {
+        flex: 1 100%;
+        display: block;
+      }
+      li a {
+        width: 100%;
+        display: block;
+      }
+    }
+    &.focus .sub-menu,
+    &:hover .sub-menu {
+      opacity: 1;
+      max-height: 10000px;
+      transition: none;
+      li {
+        //animation: fadeInLeft .5s;
+      }
+    }
+  }
+}

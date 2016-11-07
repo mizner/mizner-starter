@@ -1,0 +1,56 @@
+form.login,
+[name="loginForm"] {
+  background: white;
+  color: $gray;
+  min-width: 300px;
+  label {
+    color: $gray;
+  }
+  a {
+    color: $gray;
+  }
+  p {
+    margin: 0 0 .5em;
+  }
+  .login-username,
+  .login-password {
+    position: relative;
+    margin: 1em 0 .5em;
+    input {
+      width: 100%;
+      color: $gray;
+      background: white;
+      margin-bottom: .25em;
+      border-bottom: 2px solid $lightGray;
+    }
+    label {
+      position: absolute;
+      top: .75em;
+      left: 0;
+      transition: 200ms ease all;
+    }
+    input:focus {
+      outline: none;
+      border-bottom: 2px solid $darkGray;
+    }
+    input:focus ~ label,
+    input:valid ~ label {
+      font-size: .8em;
+      left: 0;
+      transform: translate(0px, -2em);
+    }
+  }
+  .login-remember {
+    font-size: .8em;
+  }
+  .login-lostpassword {
+    float: right;
+    font-size: .8em;
+  }
+}
+
+// Login form
+
+.loginform .popupInner {
+  align-items: center;
+}

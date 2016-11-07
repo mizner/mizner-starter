@@ -1,0 +1,34 @@
+.woocommerce a.button,
+.button,
+.gform_wrapper [type="submit"],
+[type="submit"] {
+  color: $buttonText !important;
+  background: $buttonBackground !important;
+  font-size: 1em !important;
+  border: 2px solid $buttonBorder !important;
+  border-radius: 2px !important;
+  line-height: $fieldsHeight !important;
+  padding: 0 1em !important;
+  font-family: $fontSecondary !important;
+  font-weight: 100 !important;
+  transition: 400ms ease all;
+  &:after {
+    font-family: 'FontAwesome', serif;
+    content: "\f105";
+    margin-left: 0em;
+    transition: 400ms ease all;
+    opacity: 0;
+    position: absolute;
+  }
+  &:hover {
+    color: $buttonTextHover !important;
+    background: $buttonBackgroundHover !important;
+    border-color: $buttonBorderHover !important;
+    padding-right: 2em !important;
+    &:after {
+      margin-left: .75em;
+      opacity: 1;
+    }
+  }
+}
+

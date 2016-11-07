@@ -1,0 +1,69 @@
+/* the main classes used for alignment */
+.alignnone {
+}
+
+.alignleft {
+  text-align: left;
+}
+
+.alignright {
+  text-align: right;
+}
+
+.aligncenter {
+  text-align: center;
+}
+
+img.alignnone {
+}
+
+img.alignleft {
+  float: left;
+}
+
+img.alignright {
+  float: right;
+}
+
+img.aligncenter {
+  float: none;
+}
+
+.wp-caption {
+}
+
+/* img caption */
+.gallery {
+}
+
+.gallery-caption {
+}
+
+/* styles for img sizes */
+img.size-full {
+}
+
+img.size-large {
+}
+
+img.size-medium {
+}
+
+img.size-thumbnail {
+}
+
+/* not classes, but surely something you should take care of */
+blockquote {
+}
+
+code {
+}
+
+pre {
+}
+
+hr {
+}
+
+del {
+}

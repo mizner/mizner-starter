@@ -1,0 +1,37 @@
+#menuButton {
+  position: fixed;
+  bottom: 1em;
+  left: 5%;
+  width: initial;
+  padding-left: 1em;
+  padding-right: 1em;
+  transition: 1s ease all;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+  &.hide-on-scroll {
+    bottom: -200px;
+  }
+}
+
+.toggled #menuButton {
+  &.hide-on-scroll {
+    bottom: 1em;
+  }
+}
+
+#primaryMenu {
+  max-width: 90%;
+  margin: auto;
+  display: none;
+  position: fixed;
+  bottom: 5em;
+  left: 0;
+  right: 0;
+  top: 20%;
+  overflow: scroll;
+  padding: 1em;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+}
+
+.toggled #primaryMenu {
+  display: block;
+}

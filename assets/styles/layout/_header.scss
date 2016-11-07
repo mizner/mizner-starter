@@ -1,0 +1,36 @@
+#header {
+  text-align: center;
+  @media screen and (min-width: $small) {
+    text-align: initial;
+  }
+}
+
+@media screen and (min-width: $small) {
+  #header {
+    @include bleed(none);
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  #headerContainer {
+    @include bleed(margins);
+    display: flex;
+    > * {
+      display: inline-block;
+      flex: 1;
+    }
+  }
+  #headerPrimary {
+    @include flexbox(start);
+    align-items: center;
+  }
+  #headerSecondary {
+    flex: 5;
+    text-align: right;
+    > * {
+      margin-bottom: .5em;
+      > * {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+$menuButtonHeight: 3em;
+
+#topMenuNav button#menuButton {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+}
+
+#wrapper {
+  margin-top: $menuButtonHeight !important;
+  @media screen and (min-width: $medium) {
+    margin-top: initial !important;
+  }
+}
+
+#topMenuNav button#menuButton {
+  font-size: 1em;
+  padding: 0;
+  text-transform: uppercase;
+  width: 100%;
+  line-height: $menuButtonHeight;
+  border: none;
+}
+
+#topMenuNav {
+  transition: 400ms ease all;
+  .primary-menu {
+    margin-top: 0px;
+    display: none;
+  }
+}
+
+#topMenuNav.toggled {
+  button#menuButton {
+    box-shadow: none;
+  }
+  .primary-menu {
+    top: $menuButtonHeight;
+    left: 0;
+    right: 0;
+    bottom: 20%;
+    overflow: scroll;
+    display: block;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+    li {
+      animation: fadeInLeft .5s;
+    }
+  }
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar #topMenuNav button#menuButton {
+    top: 46px;
+  }
+
+  .admin-bar #topMenuNav #primaryMenu {
+    margin-top: 46px;
+  }
+
+  #wpadminbar {
+    position: fixed;
+  }
+}

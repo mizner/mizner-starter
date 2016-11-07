@@ -1,0 +1,124 @@
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  background-color: $bodyBackground;
+  font-family: $fontPrimary;
+  font-weight: 100;
+  line-height: 1.45em;
+  color: $textColor;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin-bottom: 1.3em;
+}
+
+h1, h2, h3, h4 {
+  color: $headingColor;
+  font-family: $fontSecondary;
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+  //text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.47);
+}
+
+.dark,
+.carousel {
+  h1, h2, h3, h4 {
+    color: $light;
+  }
+}
+
+h1 {
+  font-size: 3.157em;
+}
+
+h2 {
+  font-size: 2.369em;
+}
+
+h3 {
+  font-size: 1.777em;
+}
+
+h4 {
+  font-size: 1.333em;
+}
+
+small, .font_small {
+  font-size: 0.75em;
+}
+
+a {
+  color: $bodyLinks;
+  text-decoration: none;
+  &:visited {
+    color: $bodyLinkVisited;
+  }
+  &:hover, &:focus {
+    color: $bodyLinkHover;
+  }
+}
+
+input, textarea {
+  font-size: 1em;
+  border-radius: 2px;
+  background: $light;
+  color: $gray;
+  //border: 1px solid $gray !important;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.42);
+  padding-left: 1em;
+  line-height: $fieldsHeight;
+}
+
+textarea {
+  padding-top: 1em;
+}
+
+@media screen and (min-width: $medium) {
+  aside#sidebar {
+    float: left;
+    width: 20%;
+    padding-left: 1em;
+  }
+
+  section#content {
+    float: right;
+    width: 80%;
+    padding-right: 1em;
+  }
+
+  footer#footer {
+    clear: both;
+  }
+}
+
+#wrapper {
+  min-height: 100%;
+}
+
+#wrapper {
+  @include bleed(margins);
+  min-height: 300px;
+}
+
+.page-template-acf-flex-modules #content {
+  float: none;
+  max-width: inherit;
+  padding: 0;
+}
+
+.page-template-acf-flex-modules #wrapper {
+  @include bleed(none);
+  > section {
+    @include bleed(margins);
+  }
+}
+
+
+
+

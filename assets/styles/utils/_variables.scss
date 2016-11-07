@@ -1,0 +1,82 @@
+$dark: #101010;
+$darkGray: #414042;
+$lightGray: #e6e6e6;
+$gray: #868686;
+$light: white;
+
+$page-margin: 10%;
+
+// Define Color Scheme
+
+
+/* !important: content should never be more than 55-ish characters per line, it just becomes unreadable */
+$contentWidth: 30.55555em;
+
+// Menu & Header helpers
+$headerNavZindex: 999;
+
+// !important -  Responsible for cohesive input height & button height
+$fieldsHeight: 2em;
+
+$textShadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+$darkTransparentBackground: rgba(0, 0, 0, 0.90);
+
+// General
+$bodyBackground: $light;
+$textColor: $dark;
+$headingColor: $dark;
+$bodyLinks: $gray;
+$bodyLinkHover: $lightGray;
+$bodyLinkVisited: $lightGray;
+
+// Fonts
+$fontPrimary: 'Noto Sans', sans-serif;
+$fontSecondary:  'Noto Sans', sans-serif;
+
+// Header
+$logoSize: 170px;
+$headerBackground: $light;
+$headerText: $gray;
+$LogoSize: 20%;
+$MenuSize: 80%;
+
+// Mobile Nav
+$mobileNavText: $light;
+$mobileNavBackground: $darkTransparentBackground;
+$mobileNavBackgroundFocus: $darkGray;
+
+// Nav
+$currentMenuItem: $darkGray;
+$menuTextColor: $gray;
+$menuHover: $darkGray;
+$subMenuBackground: $darkTransparentBackground;
+$subMenuItemBackground: $darkGray;
+
+// Search Form
+$searchButton: $darkGray;
+
+// Social Icons
+$iconColor: $darkGray;
+$iconColorHover: $gray;
+
+// Buttons
+$buttonBackground: $darkGray;
+$buttonBorder: $darkGray;
+$buttonText: $light;
+// Buttons:hover
+$buttonBackgroundHover: $gray;
+$buttonBorderHover: $gray;
+$buttonTextHover: $light;
+
+
+// Footer
+$footerText: $light;
+$footerBackground: $dark;
+
+
+// Media Query Sizes
+$super: 1405px;
+$extra: 1100px;
+$large: 980px;
+$medium: 767px;
+$small: 479px;
