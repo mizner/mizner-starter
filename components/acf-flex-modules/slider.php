@@ -7,6 +7,9 @@
 				if ( $z === 0 ) {
 					$active = "active";
 				}
+				else {
+					$active = "";
+				}
 				echo "<li data-target='#flexCarousel' data-slide-to='{$z}' class='{$active}'></li>";
 				$z ++;
 			endwhile; ?>
