@@ -11,7 +11,7 @@ const theFiles = [
     "header/navigation/navigation-mobile.js",
     "header/navigation/navigation-mobile-hide-button-on-scroll.js",
     "popup-base.js",
-    // "popup-login.js",
+    "popup-login.js",
     "visible-in-browser.js",
     "header/navigation/prevent-empty-nav-redirect.js",
     "call-to-action-form-popup.js",

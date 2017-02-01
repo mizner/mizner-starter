@@ -1,6 +1,6 @@
 (function () {
 
-    var visibleY = function (el) {
+    const visibleY = function (el) {
         var rect = el.getBoundingClientRect(), top = rect.top, height = rect.height,
             el = el.parentNode;
         do {
@@ -15,7 +15,7 @@
     };
 
 
-    var visibleElements = document.querySelectorAll(".on-screen");
+    const visibleElements = document.querySelectorAll(".on-screen");
 
     window.onscroll = function () {
         for (var i = 0; i < visibleElements.length; i++) {
