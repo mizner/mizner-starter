@@ -1,0 +1,53 @@
+#mobile-menu-button {
+  background: $dark;
+  position: fixed;
+  left: 5%;
+  width: initial;
+  padding-left: 1em;
+  padding-right: 1em;
+  transition: 1s ease all;
+  box-shadow: $shadow;
+  z-index: 9999;
+  border-radius: $border-radius;
+  font-family: $font-secondary;
+  &:focus {
+    top: initial;
+  }
+}
+
+#mobile-menu-button.hide-on-scroll {
+  bottom: -200px;
+}
+
+#mobile-menu-button,
+#mobile-menu-button[aria-expanded="false"] {
+  bottom: 1em;
+}
+
+
+
+.toggled #mobile-menu-button {
+  &.hide-on-scroll {
+    bottom: 1em;
+  }
+}
+
+#primaryMenu {
+  background: $dark;
+  max-width: 90%;
+  margin: auto;
+  display: none;
+  position: fixed;
+  bottom: 5em;
+  left: 0;
+  right: 0;
+  top: 20%;
+  overflow: scroll;
+  padding: 1em;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+  z-index: 9999;
+}
+
+.toggled #primaryMenu {
+  display: block;
+}

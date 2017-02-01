@@ -1,0 +1,54 @@
+#mobile-menu-button {
+  display: none;
+}
+
+ul.site-menu {
+  // -------------------------------
+  // General
+  // -------------------------------
+  li a {
+    transition: 400ms ease all;
+    border: 1px dotted rgba(0,0,0,0);
+    &:hover, &:focus {
+      color: $gray-light;
+      //background: $dark-clear;
+      border-color: $gray;
+    }
+  }
+  // -------------------------------
+  // First Level
+  // -------------------------------
+  > * {
+
+  }
+  > li {
+    display: inline-block;
+  }
+  > li > a {
+
+
+  }
+  > li > ul.sub-menu {
+    background: $gray-dark;
+    box-shadow: $shadow;
+    a {
+      color: white;
+    }
+  }
+}
+
+#secondaryMenu {
+  li {
+    a {
+
+    }
+  }
+}
+
+#primaryMenu {
+  li {
+    a {
+
+    }
+  }
+}

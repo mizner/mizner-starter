@@ -1,0 +1,25 @@
+/*
+ * Object fit Polyfill
+ * uses modernizer-custom.js and object-fit-fix-polyfill.js
+ */
+.object-fit-fix {
+  background-position: center;
+  background-size: cover !important;
+  img {
+    object-fit: cover;
+  }
+}
+
+.transparent_child {
+  img {
+    opacity: 0;
+  }
+}
+
+
+// Fix Jetpack Galleries
+.tiled-gallery-item {
+  img {
+    object-fit: cover;
+  }
+}

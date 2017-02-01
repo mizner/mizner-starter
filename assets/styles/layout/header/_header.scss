@@ -1,0 +1,23 @@
+@import "header-general";
+
+@media screen and (min-width: $medium) {
+  @import "header-fixed";
+  @import "header-ghost";
+}
+
+@import "nav/nav-general";
+
+@media screen and (max-width: $medium) {
+  @import "nav/nav-mobile";
+  @import "nav/nav-mobile-menu-button";
+  // @import "nav/nav-mobile-fixed-top";
+  @import "nav/nav-mobile-hide-on-scroll";
+}
+
+@media screen and (min-width: $medium) {
+  @import "nav/nav-desktop";
+  @import "nav/nav-dropdown-hover";
+  // @import "navigation/nav-dropdown-buttons";
+}
+
+@import "header-customizations";

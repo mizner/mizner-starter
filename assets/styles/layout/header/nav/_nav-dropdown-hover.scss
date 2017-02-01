@@ -1,0 +1,36 @@
+.site-menu {
+  > li.menu-item-has-children {
+    position: relative;
+    transition: 0.2s .7s;
+    > ul.sub-menu {
+      white-space: nowrap;
+      position: absolute;
+      right: 0;
+      z-index: 999;
+      visibility: hidden;
+      transition: 0.2s .7s; /* delay on hover off */
+      opacity: 0;
+    }
+    &:focus, &:hover {
+      border-color: $gray;
+      transition-delay: 0s;
+      > ul.sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s; /* react immediately on hover */
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.site-menu > li.menu-item-has-children > a {
+  cursor: s-resize;
+  &:after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    padding-left: .5em;
+  }
+}

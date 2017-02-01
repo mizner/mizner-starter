@@ -1,3 +1,8 @@
 #footer {
+  color: white;
+  background: $footer-background;
   text-align: center;
+  .footer-info {
+    @include bleed;
+  }
 }

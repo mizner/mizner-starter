@@ -1,0 +1,132 @@
+/*
+ * Class Options: larr, rarr, uarr, x, plus
+ * https://codepen.io/bennettfeely/pen/twbyA?editors=1100
+ */
+
+// Change to watch in slow motion
+$duration: .75s;
+
+$size : 100%;
+$toggled-size : 1;
+
+$content-bg : #FFF;
+
+$btnLineWeight: .2em; // .3125rem;
+
+.navicon-button {
+  display: inline-block;
+  position: relative;
+  //padding: 1em 1em 1em .5em;// 2.0625rem 1.5rem;
+  transition: $duration/2;
+  cursor: pointer;
+  user-select: none;
+  opacity: .8;
+
+  .navicon:before, .navicon:after {
+    transition: $duration/2;
+  }
+
+  &:hover {
+    transition: $duration;
+    opacity: 1;
+
+    .navicon:before, .navicon:after {
+      transition: $duration/2;
+    }
+
+    .navicon:before { top: .825rem; }
+    .navicon:after { top: -.825rem; }
+  }
+}
+
+.navicon {
+  position: relative;
+  width: 2.5em;
+  height: $btnLineWeight;
+  background: $content-bg;
+  transition: $duration;
+  border-radius: 2.5rem;
+
+  &:before, &:after {
+    display: block;
+    content: "";
+    height: $btnLineWeight;
+    width: 2.5rem;
+    background: $content-bg;
+    position: absolute;
+    z-index: -1;
+    transition: $duration $duration/2;
+    border-radius: 1rem;
+  }
+
+  &:before { top: .625rem; }
+  &:after { top: -.625rem; }
+}
+
+.open:not(.steps) .navicon:before,
+.open:not(.steps) .navicon:after {
+  top: 0 !important;
+}
+
+.open .navicon:before,
+.open .navicon:after {
+  transition: $duration;
+}
+
+/* Minus */
+.open { transform: scale($toggled-size); }
+
+/* Arrows */
+.open.larr .navicon,
+.open.rarr .navicon,
+.open.uarr .navicon {
+  &:before, &:after {
+    width: 1.5rem;
+  }
+
+  &:before { transform: rotate(35deg); transform-origin: left top; }
+  &:after { transform: rotate(-35deg); transform-origin: left bottom; }
+}
+.open.uarr { transform: scale($toggled-size) rotate(90deg); }
+
+/* Arrows */
+.open.rarr .navicon {
+  &:before { transform: translate3d(1em,0,0) rotate(-35deg); transform-origin: right top; }
+  &:after { transform: translate3d(1em,0,0) rotate(35deg); transform-origin: right bottom; }
+}
+
+/* × and + */
+.open.plus,
+.open.x {
+  .navicon {
+    background: transparent;
+
+    &:before { transform: rotate(-45deg); }
+    &:after { transform: rotate(45deg); }
+  }
+}
+.open.plus {
+  transform: scale($toggled-size) rotate(45deg)
+}
+
+
+#mobile-menu-button {
+  //background: green;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3em;
+  > * {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  p {
+    text-transform: uppercase;
+    padding-left: .5em;
+    margin: 0;
+    font-size: 1.75em;
+  }
+}

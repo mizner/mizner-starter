@@ -2,7 +2,7 @@
 /*
  * Making jQuery Google API
  */
-add_action( 'template_loaded', 'modify_jquery' );
+add_action( 'init', 'modify_jquery' );
 function modify_jquery() {
 	if ( ! is_admin() ) {
 		// comment out the next two lines to load the local copy of jQuery
@@ -11,15 +11,17 @@ function modify_jquery() {
 	}
 }
 
-$enqueues = new Enqueues();
+add_action( 'wp_enqueue_scripts', [ 'Enqueues', 'general' ] );
 
-add_action( 'wp_enqueue_scripts', [ $enqueues, 'general' ] );
-
-add_action( 'get_footer', [ $enqueues, 'footer_styles' ] );
+add_action( 'get_footer', [ 'Enqueues', 'footer_styles' ] );
 
 class Enqueues {
 
 	public static function general() {
+
+		wp_register_script( 'flickity', THEME_BASE_URI . '/js/flickity.min.js', null, '2.0.5', true );
+
+		wp_enqueue_style( PROJECT, THEME_BUILD_URI . PROJECT . '.min.css', [], THEME_VERSION, 'all' );
 
 		wp_enqueue_script( PROJECT . '-js', THEME_BUILD_URI . PROJECT . '.min.js', [ 'jquery' ], THEME_VERSION, true );
 
@@ -29,12 +31,13 @@ class Enqueues {
 	}
 
 	public static function footer_styles() {
-		wp_enqueue_style( PROJECT . '-css', THEME_BUILD_URI . PROJECT . '.min.css', array(), THEME_VERSION, 'all' );
 
 		if ( defined( 'GOOGLE_FONTS' ) ) {
 			wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=' . GOOGLE_FONTS );
 		}
+
 		wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
+
 		wp_enqueue_style( PROJECT . '-info', get_stylesheet_uri() );
 	}
 

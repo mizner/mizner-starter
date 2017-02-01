@@ -1,0 +1,28 @@
+.home div#wrapper {
+  margin-top: 0 !important;
+}
+
+.home #the-header {
+  background: transparent;
+  a, i {
+    color: white;
+  }
+}
+.home .fixed-header #the-header {
+  a, i {
+    color: $dark;
+  }
+  .sub-menu a {
+    color: white;
+  }
+}
+
+.home .fixed-header #the-header {
+  background: linear-gradient(180deg, rgba(237, 237, 237, 1) 0%, rgba(246, 246, 246, 1) 53%, rgba(255, 255, 255, .5) 100%);
+}
+
+
+
+
+
+

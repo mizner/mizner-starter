@@ -1,0 +1,20 @@
+.loop_product_wrapper {
+  position: relative;
+  img {
+    margin-bottom: 0 !important;
+  }
+  h3 {
+    color: white;
+  }
+}
+
+.product_meta_info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: $dark-clear;
+  z-index: 9;
+  padding: 1em;
+  width: 100%;
+}

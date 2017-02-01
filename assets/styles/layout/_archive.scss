@@ -1,0 +1,14 @@
+ul.post-categories {
+  @extend .font_small;
+  padding-left: 0;
+  list-style-type: none;
+  li {
+    display: inline-block;
+    a:after {
+      content: ", ";
+    }
+    &:last-of-type a:after{
+      content: none;
+    }
+  }
+}

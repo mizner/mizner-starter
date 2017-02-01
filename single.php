@@ -1,15 +1,9 @@
 <?php get_header(); ?>
 
-	<section id="content">
+<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+	<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
-			<?php get_template_part( 'loop-templates/content', 'single' ); ?>
-
-		<?php endwhile; ?>
-
-	</section>
-
-<?php get_sidebar(); ?>
+<?php endwhile; ?>
 
 <?php get_footer(); ?>

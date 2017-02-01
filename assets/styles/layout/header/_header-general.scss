@@ -1,0 +1,88 @@
+.the-header-top-bar {
+  background: $dark-clear;
+  width: 100%;
+  > * {
+    @include bleed;
+  }
+}
+
+#the-header {
+  width: 100%;
+  background: $dark;
+  color: white;
+
+}
+
+.the-header-container {
+  @include bleed;
+  @include flexbox(center);
+  justify-content: space-between;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.the-header-primary {
+  padding: .5em 0;
+  flex: 1 100%;
+  @media screen and (min-width: $medium) {
+    max-width: 20%;
+  }
+  #logo {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: $medium) {
+      margin-left: 0;
+    }
+    h1 {
+      margin: 0;
+      color: white;
+    }
+    a {
+      max-width: 100%;
+    }
+    svg {
+      height: 100%;
+      max-height: 100px;
+      width: 100%;
+      // filter: drop-shadow(6px 2px 5px #000);
+    }
+  }
+}
+
+.the-header-secondary {
+
+  @media screen and (min-width: $medium) {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    max-width: 80%;
+  }
+  > * {
+    width: 100%;
+    text-align: center;
+    @media screen and (min-width: $medium) {
+      text-align: right;
+    }
+    > * {
+      @media screen and (max-width: $medium) {
+        width: 100%;
+      }
+      display: inline-block;
+      @media screen and (min-width: $medium) {
+        text-align: right;
+      }
+    }
+  }
+}
+
+// ------------------------
+// Logged In Fix
+// ------------------------
+
+.admin-bar #the-header {
+  top: 32px;
+  @media screen and (max-width: 782px) {
+    top: 46px;
+  }
+}

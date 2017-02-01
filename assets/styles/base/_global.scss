@@ -1,52 +1,53 @@
 html {
   font-size: 16px;
-  height: 100%;
 }
 
 body {
-  background-color: $bodyBackground;
-  font-family: $fontPrimary;
+  background-color: white;
+  font-family: $font-primary;
   font-weight: 100;
   line-height: 1.45em;
-  color: $textColor;
-  height: 100%;
+  color: $dark;
   -webkit-font-smoothing: antialiased;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: auto;
 }
 
 p {
   margin-bottom: 1.3em;
 }
 
-h1, h2, h3, h4 {
-  color: $headingColor;
-  font-family: $fontSecondary;
+h1, h2, h3, h4, h5, h6 {
+  color: $dark;
+  font-family: $font-secondary;
   margin: 1.414em 0 0.5em;
   font-weight: inherit;
   line-height: 1.2;
-  //text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.47);
-}
-
-.dark,
-.carousel {
-  h1, h2, h3, h4 {
-    color: $light;
-  }
+  // text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.47);
 }
 
 h1 {
-  font-size: 3.157em;
+  font-size: 2.25em;
 }
 
 h2 {
-  font-size: 2.369em;
+  font-size: 2em;
 }
 
 h3 {
-  font-size: 1.777em;
+  font-size: 1.5em;
 }
 
 h4 {
-  font-size: 1.333em;
+  font-size: 1.25em;
 }
 
 small, .font_small {
@@ -54,69 +55,64 @@ small, .font_small {
 }
 
 a {
-  color: $bodyLinks;
+  color: $gray;
   text-decoration: none;
   &:visited {
-    color: $bodyLinkVisited;
+    color: $gray;
   }
   &:hover, &:focus {
-    color: $bodyLinkHover;
+    color: $gray;
   }
+}
+
+input, select {
+  line-height: $fields-height;
+  height: $fields-height;
 }
 
 input, textarea {
   font-size: 1em;
   border-radius: 2px;
-  background: $light;
+  background: white;
   color: $gray;
   //border: 1px solid $gray !important;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.42);
   padding-left: 1em;
-  line-height: $fieldsHeight;
 }
 
 textarea {
   padding-top: 1em;
 }
 
-@media screen and (min-width: $medium) {
-  aside#sidebar {
-    float: left;
-    width: 20%;
-    padding-left: 1em;
-  }
+.container {
+  @include bleed;
+}
 
-  section#content {
-    float: right;
-    width: 80%;
-    padding-right: 1em;
-  }
-
-  footer#footer {
-    clear: both;
+body.single-format-standard,
+body.page-template-default {
+    .the-content {
+      padding-top: 2em;
+      padding-bottom: 3em;
+      img {
+        max-width: 100%;
+      }
+      @media screen and (min-width: $medium) {
+        max-width: $content-width;
+        width: $content-width;
+      }
   }
 }
 
-#wrapper {
-  min-height: 100%;
-}
-
-#wrapper {
-  @include bleed(margins);
-  min-height: 300px;
-}
-
-.page-template-acf-flex-modules #content {
-  float: none;
-  max-width: inherit;
-  padding: 0;
-}
-
-.page-template-acf-flex-modules #wrapper {
-  @include bleed(none);
-  > section {
-    @include bleed(margins);
+.dark {
+  h1, h2, h3, h4, h5, p, label {
+    color: white;
   }
+}
+
+
+.box {
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 

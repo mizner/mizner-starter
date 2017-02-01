@@ -1,0 +1,10 @@
+.woocommerce-cart table.shop_table {
+  input {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    line-height: $fields-height !important;
+    &[name="coupon_code"] {
+      width: 120px !important;
+    }
+  }
+}

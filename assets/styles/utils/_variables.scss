@@ -1,80 +1,75 @@
-$dark: #101010;
-$darkGray: #414042;
-$lightGray: #e6e6e6;
+// -------------------------------
+// Base Color Helpers
+// -------------------------------
+
+$dark: #191919;
+$dark-clear: rgba(0, 0, 0, 0.60);
+$gray-dark: #414042;
+$gray-light: #e6e6e6;
 $gray: #868686;
-$light: white;
 
-$page-margin: 10%;
-
+// -------------------------------
 // Define Color Scheme
+// -------------------------------
+// example:"$blue: #3386e2"
 
-
-/* !important: content should never be more than 55-ish characters per line, it just becomes unreadable */
-$contentWidth: 30.55555em;
+// !important: content should never be more than 55-ish characters per line, it just becomes unreadable
+// https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/
+$content-width: 750px;
 
 // Menu & Header helpers
-$headerNavZindex: 999;
+$z-index-header: 999;
 
+$line-height: 2.25em;
+$border-radius: 2px;
 // !important -  Responsible for cohesive input height & button height
-$fieldsHeight: 2em;
+$fields-height: 2em;
 
-$textShadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-$darkTransparentBackground: rgba(0, 0, 0, 0.90);
+$shadow: 0px 3px 1em rgba(0, 0, 0, 0.5);
 
 // General
-$bodyBackground: $light;
-$textColor: $dark;
-$headingColor: $dark;
-$bodyLinks: $gray;
-$bodyLinkHover: $lightGray;
-$bodyLinkVisited: $lightGray;
 
+// -------------------------------
 // Fonts
-$fontPrimary: 'Noto Sans', sans-serif;
-$fontSecondary:  'Noto Sans', sans-serif;
+// -------------------------------
+$font-primary: 'Noto Sans', sans-serif;
+$font-secondary: 'Noto Sans', sans-serif;
 
 // Header
-$logoSize: 170px;
-$headerBackground: $light;
-$headerText: $gray;
-$LogoSize: 20%;
-$MenuSize: 80%;
+$header-background: white;
 
-// Mobile Nav
-$mobileNavText: $light;
-$mobileNavBackground: $darkTransparentBackground;
-$mobileNavBackgroundFocus: $darkGray;
+// Mobile Navigation
+$mobile-nav-text: white;
+$mobile-nav-background: $dark-clear;
 
-// Nav
-$currentMenuItem: $darkGray;
-$menuTextColor: $gray;
-$menuHover: $darkGray;
-$subMenuBackground: $darkTransparentBackground;
-$subMenuItemBackground: $darkGray;
+// Navigation
+$current-menu-item: $gray-dark;
+$menu-text-color: $gray;
+$menu-hover: $gray-dark;
+$sub-menu-background: $dark-clear;
+$sub-menu-item-background: $gray-dark;
 
 // Search Form
-$searchButton: $darkGray;
+$search-button: $gray-dark;
 
-// Social Icons
-$iconColor: $darkGray;
-$iconColorHover: $gray;
-
+// -------------------------------
 // Buttons
-$buttonBackground: $darkGray;
-$buttonBorder: $darkGray;
-$buttonText: $light;
+// -------------------------------
+$button-background: $gray-dark;
+$button-border: $gray-dark;
+$button-text: white;
 // Buttons:hover
-$buttonBackgroundHover: $gray;
-$buttonBorderHover: $gray;
-$buttonTextHover: $light;
+$button-background-hover: $gray;
+$button-border-hover: $gray;
+$button-text-hover: white;
 
+$footer-text: white;
+$footer-links: white;
+$footer-background: $dark;
 
-// Footer
-$footerText: $light;
-$footerBackground: $dark;
-
-
+// -------------------------------
 // Media Query Sizes
+// -------------------------------
 $super: 1405px;
 $extra: 1100px;
 $large: 980px;

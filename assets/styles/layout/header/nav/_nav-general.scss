@@ -1,0 +1,55 @@
+ul.site-menu {
+  margin: 0;
+  padding-left: 0;
+  // -------------------------------
+  // General Rules
+  // -------------------------------
+  li {
+    text-align: left;
+    a {
+      line-height: $line-height;
+      display: inline-block;
+      width: 100%;
+
+      &:hover, &:focus {
+
+      }
+      border-bottom: 1px dotted white;
+    }
+    .sub-menu li a {
+      padding-right: 1em;
+
+    }
+  }
+  // -------------------------------
+  // Indentation
+  // -------------------------------
+  > li a {
+    padding-left: 1em;
+  }
+  ul.sub-menu {
+    padding-left: 0;
+    li a {
+      padding-left: 1.25em;
+    }
+  }
+  ul.sub-menu > li > ul.sub-menu {
+    li a {
+      padding-left: 2.5em;
+    }
+  }
+  // -------------------------------
+  // First Level
+  // -------------------------------
+  > li {
+    margin-left: -3px;
+    > a {
+      padding-left: 1em;
+      padding-right: 1em;
+      line-height: $line-height;
+    }
+  }
+}
+
+
+

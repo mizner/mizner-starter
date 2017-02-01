@@ -1,0 +1,25 @@
+.call-to-action {
+  position: relative;
+  overflow: hidden;
+  .call-to-action-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    img {
+      height: inherit;
+      width: inherit;
+    }
+  }
+  .call-to-action-content {
+    text-align: center;
+    padding: 1em 1.5em;
+    max-width: $content-width;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+  }
+}

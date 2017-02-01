@@ -1,0 +1,7 @@
+.hero {
+  @include slider-base-rules(300px, 800px); //first value is mobile height, second value is desktop height
+  position: relative;
+  article {
+
+  }
+}

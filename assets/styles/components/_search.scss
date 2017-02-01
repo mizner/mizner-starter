@@ -1,11 +1,7 @@
 #search-form {
+  width: 100%;
+  max-width: 300px;
   position: relative;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  @media screen and (min-width: 1025px) {
-    margin-right: initial;
-  }
   &:before {
     font-family: 'FontAwesome', serif;
     content: "\f002";
@@ -21,7 +17,9 @@
 
 input#search-input {
   width: 100%;
+  line-height: 0;
   padding-left: 1.75em;
-  //line-height: $fieldsHeight;
+  padding-top: .5em;
+  padding-bottom: .5em;
   font-size: 1em;
 }

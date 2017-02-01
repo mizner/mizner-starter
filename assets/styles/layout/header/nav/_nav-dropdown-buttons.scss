@@ -1,0 +1,63 @@
+#topMenuNav {
+  .menu-item-has-children a {
+    position: relative;
+    padding-right: 30px;
+  }
+}
+#topMenuNav > div > ul {
+  // Buttons
+  button {
+    opacity: .5;
+    padding: 0 2px;
+    border-radius: 0;
+    line-height: 1em;
+    font-size: 1em;
+    background: transparent;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: .25em;
+    right: 0px;
+    &.dropdown-toggle:after {
+      font-family: "FontAwesome", sans-serif;
+      content: "\f107";
+    }
+    &.toggled-on {
+      border: 1px solid;
+      &:after {
+        content: "\f106";
+      }
+    }
+  }
+  // Top Level Menu Items
+  > li {
+    display: inline-block;
+  }
+  // Sub Menu
+  > li {
+    > ul {
+      position: absolute;
+      left: initial;
+      z-index: 999;
+      display: none;
+    }
+    &.toggled-on > ul {
+      display: block;
+    }
+
+  }
+
+  // Sub Sub Menu
+  > li > ul > li {
+    > ul {
+      left: initial;
+      position: initial;
+      display: none;
+    }
+    &.toggled-on > ul {
+      display: block;
+    }
+  }
+}
