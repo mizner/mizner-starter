@@ -12,11 +12,11 @@ const theFiles = [
     "header/navigation/navigation-mobile-hide-button-on-scroll.js",
     "popup-base.js",
     "popup-login.js",
-    "visible-in-browser.js",
+    // "visible-in-browser.js",
     "header/navigation/prevent-empty-nav-redirect.js",
     "call-to-action-form-popup.js",
     // jQuery Add-ons
-    "vendors/jquery-smooth-scroll.js",
+    "vendors/jquery-smooth-scroll.js", /* @todo: rewrite this in vanilla */
 ];
 
 const fileArray = theFiles.map(function (file) {

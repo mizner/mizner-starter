@@ -17,7 +17,7 @@ function render_blocking_css() {
 	if ( file_exists( stream_resolve_include_path( $file ) ) ) {
 		ob_start();
 		include_once( $file );
-		$inline_javascript = ob_get_clean();
-		echo '<style type="text/css">' . $inline_javascript . '</style>';
+		$inline_css = ob_get_clean();
+		echo '<style type="text/css">' . $inline_css . '</style>';
 	}
 }
