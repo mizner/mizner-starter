@@ -1,0 +1,26 @@
+.featurette {
+  .box {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    > * {
+      flex: 1 100%;
+    }
+    > header {
+      @media screen and (min-width: $medium) {
+        flex: 1 50%;
+        display: flex;
+        align-content: center;
+        flex-flow: row wrap;
+        > * {
+          flex: 1 100%;
+        }
+      }
+    }
+    > aside {
+      @media screen and (min-width: $medium) {
+        flex: 1 50%;
+      }
+    }
+  }
+}

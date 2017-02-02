@@ -18,13 +18,8 @@
 @import "components/buttons";
 @import "components/search";
 @import "components/custom-header";
-@import "components/call-to-action(sitewide)";
-
-// Silly ACF Flexible Content Builder thing... may or may not be production ready.
-@import "components/builder/slider";
-@import "components/builder/featurette";
-@import "components/builder/blurbs";
-@import "components/builder/gallery";
+@import "components/call-to-action";
+@import "components/featurette";
 
 
 // Layout

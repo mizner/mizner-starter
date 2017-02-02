@@ -1,6 +1,6 @@
 {
     "key": "group_58936fb92e84b",
-    "title": "About",
+    "title": "Featurette",
     "fields": [
         {
             "default_value": "",
@@ -875,7 +875,7 @@
             }
         ]
     ],
-    "menu_order": 4,
+    "menu_order": 10,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "left",
@@ -886,5 +886,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1486057540
+    "modified": 1486058928
 }

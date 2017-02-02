@@ -8,7 +8,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_588f65c904dc6",
+            "key": "field_588f65c904dc6__trashed",
             "label": "Title",
             "name": "hero_title",
             "type": "text",
@@ -27,7 +27,7 @@
             "maxlength": "",
             "placeholder": "",
             "rows": "",
-            "key": "field_588f65d204dc7",
+            "key": "field_588f65d204dc7__trashed",
             "label": "Sub Title",
             "name": "hero_sub_title",
             "type": "textarea",
@@ -48,7 +48,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_588f6e9e4d3eb",
+            "key": "field_588f6e9e4d3eb__trashed",
             "label": "Images Transition Speed",
             "name": "hero_images_speed",
             "type": "number",
@@ -93,7 +93,7 @@
             "layout": "table",
             "button_label": "",
             "collapsed": "",
-            "key": "field_588f657c04dc4",
+            "key": "field_588f657c04dc4__trashed",
             "label": "Images",
             "name": "hero_images",
             "type": "repeater",
@@ -127,5 +127,6 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1486057579
+    "modified": 1486058754,
+    "local": "php"
 }

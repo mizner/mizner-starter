@@ -60,3 +60,21 @@ function my_acf_json_save_point( $path ) {
 	return $path;
 
 }
+
+// 6. Load JSON
+add_filter( 'acf/settings/load_json', 'my_acf_json_load_point' );
+
+function my_acf_json_load_point( $paths ) {
+
+	// remove original path (optional)
+	unset( $paths[0] );
+
+
+	// append path
+	$paths[] = THEME_BASE_PATH . '/acf/acf-json';
+
+
+	// return
+	return $paths;
+
+}

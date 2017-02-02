@@ -6,18 +6,22 @@
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php get_template_part( 'components/hero' ); ?>
+        <section class="hero">
+			<?php get_template_part( 'components/hero' ); ?>
+        </section>
 
-        <section class="about">
+        <section class="featurette">
             <div class="container">
-                <div class="box featurette">
-                    <article>
-                        <h3> <?php the_field( 'about_title' ); ?></h3>
-						<?php the_field( 'about_sub_title' ); ?>
-                    </article>
-                    <aside class="embed-container">
-						<?php the_field( 'about_video' ); ?>
-                    </aside>
+                <div class="box">
+	                <?php get_template_part( 'components/featurette' ); ?>
+                </div>
+            </div>
+        </section>
+
+        <section class="blurbs">
+            <div class="container">
+                <div class="box">
+	                <?php get_template_part( 'components/blurbs' ); ?>
                 </div>
             </div>
         </section>
