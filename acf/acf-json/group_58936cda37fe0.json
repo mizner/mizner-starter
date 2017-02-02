@@ -1,6 +1,6 @@
 {
-    "key": "group_58936c2b07594",
-    "title": "Testimonials",
+    "key": "group_58936cda37fe0",
+    "title": "Recent Content",
     "fields": [
         {
             "default_value": "",
@@ -8,9 +8,9 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_58936c2b0c559",
+            "key": "field_58936cda3e2d4",
             "label": "Title",
-            "name": "testimonials_title",
+            "name": "recent_posts_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -27,11 +27,11 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_58936c2b0c613",
+            "key": "field_58936cda3e37f",
             "label": "Button Text",
-            "name": "testimonials_button_text",
+            "name": "recent_posts_button_text",
             "type": "text",
-            "instructions": "",
+            "instructions": "(optional)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -46,11 +46,30 @@
             "allow_null": 0,
             "multiple": 0,
             "allow_archives": 1,
-            "key": "field_58936c2b0c681",
+            "key": "field_58936cda3e3e8",
             "label": "Button Link",
-            "name": "testimonials_button_link",
+            "name": "recent_posts_button_link",
             "type": "page_link",
-            "instructions": "",
+            "instructions": "(optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_58936d1cd62e0",
+            "label": "Category",
+            "name": "recent_posts_category",
+            "type": "text",
+            "instructions": "You can select multiple e.g \"featured+events\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -69,7 +88,7 @@
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 20,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "left",
@@ -80,5 +99,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1486056521
+    "modified": 1486064507
 }

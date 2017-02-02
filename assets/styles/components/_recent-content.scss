@@ -1,0 +1,11 @@
+.recent-content-singles {
+  display: flex;
+  justify-content: space-between;
+  > * {
+    flex: 1 100%;
+    @media screen and (min-width: $medium) {
+      flex: 1;
+      padding: 1em;
+    }
+  }
+}

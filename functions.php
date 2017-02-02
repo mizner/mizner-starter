@@ -23,6 +23,7 @@ function the_setup() {
 		'acf/acf-index.php',
 		'inc/custom-header-functions.php',
 		'inc/sitewide-cta-functions.php',
+		'inc/custom-featured-image.php',
 	];
 
 	foreach ( $theme_includes as $file ) {

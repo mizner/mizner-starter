@@ -1,0 +1,27 @@
+.blurbs .box {
+  display: flex;
+  justify-content: space-between;
+  > * {
+    flex: 1 100%;
+    @media screen and (min-width: $medium) {
+      flex: 1;
+    }
+  }
+}
+
+.blurb {
+  padding: 1em;
+  .blurb-top {
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      font-size: 10em;
+      color: $dark;
+    }
+  }
+  .blurb-bottom {
+    text-align: center;
+  }
+}

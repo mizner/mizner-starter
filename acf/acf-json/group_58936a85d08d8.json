@@ -43,15 +43,15 @@
                     }
                 },
                 {
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "post_type": [],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "allow_archives": 1,
                     "key": "field_58936a85e66c6",
                     "label": "Link",
                     "name": "blurb_link",
-                    "type": "text",
+                    "type": "page_link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -862,5 +862,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1486061276
+    "modified": 1486064010
 }
