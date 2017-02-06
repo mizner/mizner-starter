@@ -1,0 +1,43 @@
+.ghost-blurbs {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  > * {
+    flex: 1 100%;
+    @media screen and (min-width: $medium) {
+      flex: 1;
+    }
+  }
+  .ghost-blurb {
+    position: relative;
+    h3 {
+      @media screen and (min-width: $medium) {
+        font-size: 2.25em;
+      }
+    }
+    .ghost-blurb-image {
+      width: 100%;
+      height: 400px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .ghost-blurb-text-container {
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding: 2em 20%;
+      background: rgba(0, 0, 0, .5);
+      &:hover {
+        background: rgba(0, 0, 0, .2);
+      }
+    }
+  }
+}
