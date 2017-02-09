@@ -1,14 +1,10 @@
 <?php
-add_action( 'after_setup_theme', 'custom_header_setup' );
-function custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'custom_header_args', array(
-		'default-image' => '',
-		'width'         => 1000,
-		'height'        => 250,
-		'flex-height'   => true,
-	) ) );
-}
-
+add_theme_support( 'custom-header', apply_filters( 'custom_header_args', array(
+	'default-image' => '',
+	'width'         => 1000,
+	'height'        => 250,
+	'flex-height'   => true,
+) ) );
 
 function banner_image() {
 	$image = [];

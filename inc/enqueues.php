@@ -2,9 +2,9 @@
 /*
  * Making jQuery Google API
  */
-add_action( 'init', 'modify_jquery' );
-function modify_jquery() {
-	if ( ! is_admin() ) {
+add_action( 'wp_enqueue_scripts', 'load_cdn_jquery' );
+function load_cdn_jquery() {
+	if ( ! is_user_logged_in() ) {
 		// comment out the next two lines to load the local copy of jQuery
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', false, '1.12.4' );
