@@ -119,3 +119,10 @@ function alx_browser_body_class( $classes ) {
 
 	return $classes;
 }
+
+
+function the_svg($path) {
+	ob_start();
+	include_once THEME_BASE_PATH . $path;
+	echo ob_get_clean();
+}
