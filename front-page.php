@@ -16,6 +16,7 @@
 
 		<?php get_template_part( 'components/recent-content' ); ?>
 
+
 	<?php endwhile; ?>
 
 </section>

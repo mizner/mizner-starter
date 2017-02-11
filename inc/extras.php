@@ -1,5 +1,9 @@
 <?php
+
+// -------------------------------
 // Page Slug Body Class
+// -------------------------------
+
 add_filter( 'body_class', 'add_slug_body_class' );
 function add_slug_body_class( $classes ) {
 	global $post;
@@ -10,7 +14,19 @@ function add_slug_body_class( $classes ) {
 	return $classes;
 }
 
+// -------------------------------
+// Limit words in excerpt
+// -------------------------------
+
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+
+// -------------------------------
 // Replaces the excerpt "Read More" text by a link
+// -------------------------------
+
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 function new_excerpt_more( $more ) {
 	global $post;
