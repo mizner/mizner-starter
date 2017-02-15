@@ -8,7 +8,11 @@ add_theme_support( 'custom-header', apply_filters( 'custom_header_args', array(
 
 function banner_image() {
 	$image = [];
-	if ( $banner = get_field( 'banner_image' ) ):
+	if ( is_home() ):
+		$blog_id = get_option( 'page_for_posts' );
+		$banner  = get_field( 'banner_image', $blog_id );
+		$image['url'] = $banner['url'];
+	elseif ( $banner = get_field( 'banner_image' ) ):
 		$image['url'] = $banner['url'];
 	elseif ( has_header_image() ):
 		$image['url'] = get_header_image();
@@ -38,7 +42,7 @@ function title() {
 		$title = get_the_title();
 
 	elseif ( is_archive() ) :
-		$title = single_term_title();
+		$title = single_term_title('', false);
 		if ( is_post_type_archive() ):
 			$title = str_replace( 'Archives:', '', get_the_archive_title());
 		endif;
