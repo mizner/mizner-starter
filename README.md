@@ -16,6 +16,13 @@ Mizner Starter Theme
 - Run `gulp` to update your `/dist` folder to the new info
 - Now you should be able to run `gulp watch` and have BrowserSync stream `.css` changes and Reload on most `.js` and `.php` changes.  
 
+Recommended First Steps 
+-----------------------
+1. Get brand colors
+     - add to `_variables.scss`
+2. Open `_header.scss`
+     - choose options by commenting out what you don't want
+
 Plugins You Probably Need
 -----------------------
 - **Gravity Forms**
