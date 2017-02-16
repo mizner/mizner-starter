@@ -1,20 +1,56 @@
 {
-    "key": "group_588f6506d4060",
+    "key": "group_58a5c35d7aabc",
     "title": "Hero",
     "fields": [
+        {
+            "multiple": 0,
+            "allow_null": 0,
+            "choices": {
+                "static": "Static",
+                "rotate-images": "Rotate Images",
+                "rotate-all": "Rotate All"
+            },
+            "default_value": [
+                "static"
+            ],
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value",
+            "key": "field_58a5c35d7df7d",
+            "label": "Type",
+            "name": "hero_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
         {
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_588f65c904dc6__trashed",
+            "key": "field_58a5c35d7decd",
             "label": "Title",
             "name": "hero_title",
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "!=",
+                        "value": "rotate-all"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -27,13 +63,53 @@
             "maxlength": "",
             "placeholder": "",
             "rows": "",
-            "key": "field_588f65d204dc7__trashed",
+            "key": "field_58a5c35d7dfea",
             "label": "Sub Title",
             "name": "hero_sub_title",
             "type": "textarea",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "!=",
+                        "value": "rotate-all"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "return_format": "array",
+            "preview_size": "large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "key": "field_58a5c3db54b64",
+            "label": "Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "==",
+                        "value": "static"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -42,19 +118,121 @@
         },
         {
             "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_58a5d058cd9ee",
+            "label": "Button Text",
+            "name": "hero_button_text",
+            "type": "text",
+            "instructions": "Defaults to \"Click Here\"",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "!=",
+                        "value": "rotate-all"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_58a5d071cd9ef",
+            "label": "Button Link",
+            "name": "hero_button_link",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "!=",
+                        "value": "rotate-all"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 3000,
             "min": "",
             "max": "",
             "step": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_588f6e9e4d3eb__trashed",
-            "label": "Images Transition Speed",
+            "key": "field_58a5c35d7e0b9",
+            "label": "Transition Speed",
             "name": "hero_images_speed",
             "type": "number",
             "instructions": "e.g. 3000 = 3 seconds",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "==",
+                        "value": "rotate-images"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "==",
+                        "value": "rotate-all"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "library": "all",
+            "min": "",
+            "max": 5,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "key": "field_58a5dda9cede8",
+            "label": "Images",
+            "name": "hero_images",
+            "type": "gallery",
+            "instructions": "Please note: this is set to a maximum of 5 to avoid performance problems",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "==",
+                        "value": "rotate-images"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -64,8 +242,46 @@
         {
             "sub_fields": [
                 {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_58a5c42e2f883",
+                    "label": "Title",
+                    "name": "hero_slider_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "default_value": "",
+                    "new_lines": "wpautop",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "rows": "",
+                    "key": "field_58a5c9d52f884",
+                    "label": "Subtitle",
+                    "name": "hero_slider_subtitle",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
                     "return_format": "array",
-                    "preview_size": "medium",
+                    "preview_size": "large",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -74,10 +290,48 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "key": "field_588f659104dc5",
+                    "key": "field_58a5c9e72f885",
                     "label": "Image",
-                    "name": "hero_image",
+                    "name": "hero_slider_image",
                     "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_58a5e32a1e22c",
+                    "label": "Button Text",
+                    "name": "hero_slider_button_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_58a5e33b1e22d",
+                    "label": "Button Link",
+                    "name": "hero_slider_button_link",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -90,16 +344,24 @@
             ],
             "min": 0,
             "max": 0,
-            "layout": "table",
-            "button_label": "",
+            "layout": "row",
+            "button_label": "Add Slide",
             "collapsed": "",
-            "key": "field_588f657c04dc4__trashed",
-            "label": "Images",
-            "name": "hero_images",
+            "key": "field_58a5c40054b65",
+            "label": "Slider",
+            "name": "hero_slider",
             "type": "repeater",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5c35d7df7d",
+                        "operator": "==",
+                        "value": "rotate-all"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -127,5 +389,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1486399268
+    "modified": 1487267343
 }

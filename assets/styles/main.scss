@@ -1,31 +1,42 @@
+// -------------------------------
 // Utils
+// -------------------------------
 @import "utils/variables";
 @import "utils/mixins";
+// -------------------------------
 // Base
+// -------------------------------
 @import "vendors/sanitize";
 @import "base/wordpress";
 @import "base/global";
 @import "base/accessibility";
+// -------------------------------
 // Vendors
+// -------------------------------
 @import "vendors/animate";
 @import "vendors/flickity";
 @import "vendors/popups";
 @import "vendors/login";
+// -------------------------------
 // Polyfills (mostly ie/edge support)
+// -------------------------------
 @import "polyfills/object-fit";
+// -------------------------------
 // Components
-@import "components/social-media";
-@import "components/buttons";
-@import "components/search";
-@import "components/custom-header";
-@import "components/call-to-action";
-@import "components/featurette";
+// -------------------------------
 @import "components/blurbs";
+@import "components/buttons";
+@import "components/call-to-action";
+@import "components/custom-header";
+@import "components/featurette";
 @import "components/ghost-blurbs";
+@import "components/hero";
 @import "components/recent-content";
-
-
+@import "components/social-media";
+@import "components/search";
+// -------------------------------
 // Layout
+// -------------------------------
 @import "layout/header/header";
 @import "layout/footer-widgets";
 @import "layout/footer";
@@ -35,14 +46,16 @@
 @import "layout/page";
 @import "layout/grid";
 @import "layout/forms";
+// -------------------------------
 // Pages
+// -------------------------------
 @import "pages/front-page(home)";
 @import "pages/contact";
 @import "pages/about";
 @import "pages/home(blog)";
-@import "pages/archive";
-
+// -------------------------------
 // Plugins
+// -------------------------------
 @import "plugins/woocommerce/woocommerce";
 @import "plugins/gravity-forms/gravity-forms";
 

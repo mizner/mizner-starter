@@ -1,0 +1,41 @@
+.hero {
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+// -------------------------------
+// Hero Static
+// -------------------------------
+.hero-static {
+  @include dark;
+  .hero-static-background {
+    img {
+      height: 700px;
+      width: 100%;
+    }
+  }
+}
+
+// -------------------------------
+// Hero Rotate Images
+// -------------------------------
+.hero-rotate-images {
+  @include slider-base-rules(300px, 700px); //first value is mobile height, second value is desktop height
+  @include dark;
+}
+
+// -------------------------------
+// Hero Slider
+// -------------------------------
+.hero-slider {
+  @include slider-base-rules(300px, 700px); //first value is mobile height, second value is desktop height
+}

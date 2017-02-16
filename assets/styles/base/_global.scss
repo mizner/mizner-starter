@@ -94,25 +94,22 @@ textarea {
 
 body.single-format-standard,
 body.page-template-default {
-    .the-content {
-      padding-top: 2em;
-      padding-bottom: 3em;
-      img {
-        max-width: 100%;
-      }
-      @media screen and (min-width: $medium) {
-        max-width: $content-width;
-        width: $content-width;
-      }
+  .the-content {
+    padding-top: 2em;
+    padding-bottom: 3em;
+    img {
+      max-width: 100%;
+    }
+    @media screen and (min-width: $medium) {
+      max-width: $content-width;
+      width: $content-width;
+    }
   }
 }
 
 .dark {
-  h1, h2, h3, h4, h5, p, label {
-    color: white;
-  }
+  @include dark;
 }
-
 
 .box {
   padding-top: 3em;

@@ -1,3 +1,7 @@
+.archive {
+  @include loop-page;
+}
+
 ul.post-categories {
   @extend .font_small;
   padding-left: 0;
