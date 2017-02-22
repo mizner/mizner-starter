@@ -136,8 +136,28 @@ function alx_browser_body_class( $classes ) {
 	return $classes;
 }
 
+// -------------------------------
+// YouTube Embed Helper
+// -------------------------------
+add_filter( 'oembed_result', 'my_plugin_enable_js_api', 10, 3 );
+function my_plugin_enable_js_api( $html, $url, $args ) {
 
-function the_svg($path) {
+	/*
+	 * Modify video parameters.
+	 * This allows interacting with the youtube videos via javascript. See: https://css-tricks.com/play-button-youtube-and-vimeo-api/
+	 */
+	if ( strstr( $html, 'youtube.com/embed/' ) ) {
+		$html = str_replace( '?feature=oembed', '?feature=oembed&enablejsapi=1', $html );
+	}
+
+	return $html;
+}
+
+// -------------------------------
+// SVG Support Function
+// -------------------------------
+
+function the_svg( $path ) {
 	ob_start();
 	include_once THEME_BASE_PATH . $path;
 	echo ob_get_clean();
