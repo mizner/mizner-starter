@@ -38,4 +38,5 @@
 // -------------------------------
 .hero-slider {
   @include slider-base-rules(300px, 700px); //first value is mobile height, second value is desktop height
+  @include dark;
 }
