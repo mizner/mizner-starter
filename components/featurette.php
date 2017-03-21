@@ -11,16 +11,17 @@ $image_alt   = $image['alt'];
 $video       = get_field( $prefix . 'video' );
 $icon        = get_field( $prefix . 'icon' );
 ?>
-
 <section class="featurette">
     <div class="container">
         <div class="box">
             <header>
                 <h3> <?php echo $title; ?></h3>
 				<?php echo $subtitle; ?>
-                <a href="<?php echo $button_link ?>">
-                    <button class="button"><?php echo $button_text; ?></button>
-                </a>
+				<?php if ( $button_link ): ?>
+                    <a href="<?php echo $button_link ?>">
+                        <button class="button"><?php echo $button_text; ?></button>
+                    </a>
+				<?php endif; ?>
             </header>
             <aside>
 				<?php if ( $option == 'image' ): ?>
