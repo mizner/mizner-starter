@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: ACF Homepage
+ */
+
+get_header(); ?>
 
 <?php get_template_part( 'components/posts-slider' ) ?>
 

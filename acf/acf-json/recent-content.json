@@ -82,9 +82,9 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "post_template",
                 "operator": "==",
-                "value": "front_page"
+                "value": "templates\/template-homepage.php"
             }
         ]
     ],

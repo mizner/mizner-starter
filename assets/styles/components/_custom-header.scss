@@ -6,9 +6,12 @@
   h1 {
     position: absolute;
     bottom: 0;
+    margin:  0 auto .5%;
     z-index: 1;
     font-size: 3em;
     text-shadow: 1px 3px 9px rgba(0, 0, 0, .8);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   img {
     position: absolute;

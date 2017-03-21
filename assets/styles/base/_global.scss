@@ -103,6 +103,7 @@ body.page-template-default {
     @media screen and (min-width: $medium) {
       max-width: $content-width;
       width: $content-width;
+      margin: auto;
     }
   }
 }
