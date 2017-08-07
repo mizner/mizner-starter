@@ -1,0 +1,108 @@
+$medium: 768px;
+
+// -------------------------------
+// Shared
+// -------------------------------
+
+section.sitewide-cta-wrapper {
+  position: fixed;
+  z-index: 999999;
+  background-color: white;
+  transition: 400ms ease all;
+  .sitewide-cta {
+    position: relative;
+  }
+  .sitewide-cta-inner {
+    padding: 1em;
+  }
+  button.sitewide-cta-button {
+    position: absolute;
+    transition: 400ms ease all;
+    &:focus {
+      outline: none;
+    }
+  }
+  &.hide button.sitewide-cta-button {
+    background: #27ae60;
+    color: white;
+  }
+  &.show button.sitewide-cta-button {
+    background: #e74c3c;
+    color: white;
+  }
+}
+
+// -------------------------------
+// Mobile
+// -------------------------------
+@media screen and (max-width: $medium) {
+  $height: 87.5vh;
+  $button-size: 5vh;
+  section.sitewide-cta-wrapper {
+    z-index: 9999;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.38);
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    &.hide {
+      max-height: 0;
+    }
+    &.show {
+      max-height: 90vh;
+    }
+    div.sitewide-cta-inner {
+      height: $height;
+      overflow: scroll;
+    }
+    button.sitewide-cta-button {
+      box-shadow: 0px -5px 8px rgba(0, 0, 0, 0.38);
+      top: -$button-size; // Button Size 1
+      height: $button-size; // Button Size 2
+      width: 100%;
+      right: 0;
+    }
+  }
+}
+
+// -------------------------------
+// Desktop
+// -------------------------------
+@media screen and (min-width: $medium) {
+  $width: 600px;
+  $height: 500px;
+  section.sitewide-cta-wrapper {
+    top: 50%;
+    height: 50vh;
+    min-height: $height;
+    transform: translateY(-50%);
+    width: $width;
+  }
+  div.sitewide-cta-inner {
+    height: $height;
+    overflow: scroll;
+  }
+  &.hide {
+    right: -$width;
+  }
+  &.show {
+    right: 0;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.38);
+  }
+  button.sitewide-cta-button {
+    top: 0;
+    height: 200px;
+    left: -50px;
+    width: 50px;
+    padding: 1em;
+    span {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+  }
+  &.show button.sitewide-cta-button {
+    box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.38);
+  }
+  &.hide button.sitewide-cta-button {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.38);
+  }
+}

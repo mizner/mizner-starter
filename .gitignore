@@ -1,0 +1,6 @@
+.DS_Store
+/.idea
+/wordpress/*
+/wp-content/uploads
+/wp-content/upgrade
+wp-config.php

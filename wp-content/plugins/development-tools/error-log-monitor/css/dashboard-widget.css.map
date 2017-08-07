@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACC,iCAAgB;EAEf,KAAK,EAAE,IAAI",
+"sources": ["dashboard-widget.scss"],
+"names": [],
+"file": "dashboard-widget.css"
+}

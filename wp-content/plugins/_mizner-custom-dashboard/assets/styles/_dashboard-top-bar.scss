@@ -1,0 +1,28 @@
+#wp-admin-bar-logo {
+  div {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+}
+#topLogo {
+  width: 20px;
+}
+
+#wpadminbar {
+  background: $adminTopBarBackground !important;
+}
+
+#adminmenu, #adminmenuback, #adminmenuwrap {
+  background: $adminSidebarBackground !important;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow,
+#adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.folded #adminmenu li.current.menu-top,
+.folded #adminmenu li.wp-has-current-submenu {
+  background: $adminBarAccentBackground;
+}
+

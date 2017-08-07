@@ -1,0 +1,52 @@
+ul.social-icons {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    text-align: center;
+    a {
+      display: inline-block;
+      padding-left: .75em;
+      padding-right: .75em;
+      line-height: $line-height;
+      font-size: 1em;
+      border: 1px dotted transparent;
+      i {
+
+      }
+      &:hover, &:focus {
+        border-color: $gray;
+      }
+    }
+  }
+  li:last-of-type a {
+
+  }
+}
+
+[itemprop="telephone"] {
+  @media screen and (min-width: $medium) {
+    a {
+      border: 1px dotted transparent;
+      display: inline-block;
+      padding-left: .5em;
+      padding-right: .5em;
+      line-height: $line-height;
+      &:hover, &:focus {
+        border-color: $gray;
+      }
+    }
+  }
+}
+
+.fa_svg_wrapper {
+  width: 50px;
+  height: 50px;
+}
+
+.fa_svg_wrapper svg {
+  width: 100%;
+  height: 100%;
+}

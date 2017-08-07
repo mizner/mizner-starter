@@ -1,0 +1,79 @@
+#wp-admin-bar-logo div {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important; }
+
+#topLogo {
+  width: 20px; }
+
+#wpadminbar {
+  background: #2980b9 !important; }
+
+#adminmenu, #adminmenuback, #adminmenuwrap {
+  background: #2980b9 !important; }
+
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow,
+#adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.folded #adminmenu li.current.menu-top,
+.folded #adminmenu li.wp-has-current-submenu {
+  background: #e74c3c; }
+
+a#et_pb_toggle_builder {
+  color: #6c2eb9; }
+  a#et_pb_toggle_builder:after {
+    content: "Use Layout Builder";
+    color: white;
+    position: absolute;
+    left: 63px; }
+  a#et_pb_toggle_builder:before {
+    font-family: 'dashicons', sans-serif;
+    content: "\f136";
+    color: white; }
+  a#et_pb_toggle_builder.et_pb_builder_is_used {
+    color: #00c3aa !important; }
+  a#et_pb_toggle_builder.et_pb_builder_is_used:after {
+    content: "Use Default Editor"; }
+
+#et_pb_layout h2.ui-sortable-handle:first-of-type:after {
+  content: "Use Layout Builder";
+  color: white; }
+
+#et_pb_layout h2.ui-sortable-handle:first-of-type span {
+  display: none; }
+
+#et_pb_layout h2.ui-sortable-handle:first-of-type:before {
+  font-family: 'dashicons', sans-serif;
+  content: "\f136";
+  color: white; }
+
+.et_pb_builder_settings .et_pb_prompt_modal h3:first-of-type {
+  color: transparent !important; }
+  .et_pb_builder_settings .et_pb_prompt_modal h3:first-of-type:after {
+    position: absolute;
+    left: 1em;
+    content: "Layout Builder Settings";
+    color: white; }
+
+#wpadminbar *,
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  letter-spacing: .5px; }
+
+body {
+  background: #ecf0f1; }
+
+h1, h2, h3 {
+  color: #2c3e50; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Trebuchet MS", Helvetica, sans-serif; }
+
+/*# sourceMappingURL=custom-dashboard.min.css.map */

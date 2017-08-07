@@ -1,0 +1,55 @@
+.adminLogo {
+  -webkit-font-smoothing: antialiased !important;
+  font-size: 18px !important;
+  color: white !important;
+  vertical-align: middle;
+  padding-left: 4px !important;
+}
+
+
+/* Login Page */
+
+.login {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login h1 a {
+  height: 300px;
+  background-size: 300px;
+  width: auto;
+}
+
+.login label {
+  color: white;
+}
+
+.login form {
+  background: transparent;
+}
+
+.login #backtoblog a, .login #nav a, .login h1 a {
+  color: white;
+}
+
+.login form {
+  box-shadow: none !important;
+}
+
+input#wp-submit {
+  background-color: transparent;
+  color: white;
+  border-radius: 0;
+  border: 2px solid;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: 500ms all ease;
+}
+
+input#wp-submit:hover {
+  background-color: $blue;
+  border-color: $blue;
+  box-shadow: none;
+}

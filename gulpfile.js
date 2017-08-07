@@ -1,6 +1,13 @@
-const project = "starter";
+const path = require("path");
 
-const theFiles = [
+const PROJECT = "starter";
+const TEST_SITE = "http://starter.dev";
+const THEME_NAME = "mizner-starter";
+
+const src = path.resolve("src");
+const dist = path.resolve("wp-content/themes/" + THEME_NAME + "/dist/");
+
+const JS_FILES = [
     // 1st file loads first, 2nd, ect.
     "polyfills/promise.min.js",
     "polyfills/modernizr-custom.js",
@@ -19,8 +26,8 @@ const theFiles = [
     "vendors/jquery-smooth-scroll.js", /* @todo: rewrite this in vanilla */
 ];
 
-const fileArray = theFiles.map(function (file) {
-    return "assets/scripts/" + file;
+const FILE_ARRAY = JS_FILES.map(function (file) {
+    return path.join(src, "/scripts/") + file;
 });
 
 const gulp = require("gulp"),
@@ -37,18 +44,18 @@ const gulp = require("gulp"),
     del = require('del');
 
 gulp.task("sass", () => {
-    gulp.src("./assets/styles/**/*.scss")
+    gulp.src(path.join(src, "/styles/**/*.scss"))
         .pipe(sourcemaps.init())
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
-        .pipe(rename(project + ".min.css"))
-        .pipe(gulp.dest("./dist"))
+        .pipe(rename(PROJECT + ".min.css"))
+        .pipe(gulp.dest(dist))
         .pipe(bs.stream())
 });
 
 gulp.task("js", () => {
-    gulp.src(fileArray)
+    gulp.src(FILE_ARRAY)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(concat("output.min.js")) // concat pulls all our files together before minifying them
@@ -57,39 +64,41 @@ gulp.task("js", () => {
             presets: ["es2015"]
         }))
         .pipe(uglify())
-        .pipe(rename(project + ".min.js"))
-        .pipe(gulp.dest("./dist"))
+        .pipe(rename(PROJECT + ".min.js"))
+        .pipe(gulp.dest(dist))
         .pipe(bs.stream())
 });
 
 gulp.task("production-sass", () => {
-    gulp.src("assets/styles/**/*.scss")
+    gulp.src(path.join(src, "/styles/**/*.scss"))
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer())
         .pipe(cssnano())
-        .pipe(rename(project + ".min.css"))
-        .pipe(gulp.dest("./dist"));
+        .pipe(rename(PROJECT + ".min.css"))
+        .pipe(gulp.dest(dist));
 });
 
 gulp.task("browser-sync", () => {
     bs.init(["*"], {
-        proxy: project + ".dev",
-        root: [__dirname],
+        proxy: TEST_SITE,
+        root: path.resolve(),
         open: {
             file: "index.php"
         }
     });
 });
 
+console.log(path.resolve());
+
 gulp.task("clean:dist", () => {
     return del([
-        "dist/**/*" // here we use a globbing pattern to match everything inside the `dist` folder
+        path.join(dist, "**/*") // here we use a globbing pattern to match everything inside the `dist` folder
     ]);
 });
 
 gulp.task("watch", ["browser-sync"], () => {
-    gulp.watch("assets/styles/**/*.scss", ["sass"]);
-    gulp.watch("./assets/scripts/**/*.js", ["js"]);
+    gulp.watch(path.join(src, "/styles/**/*.scss"), ["sass"]);
+    gulp.watch(path.join(src, "/scripts/**/*.js"), ["js"]);
     gulp.watch("**/*.php", bs.reload);
     gulp.watch("gulpfile.js").on("change", function () {
         process.exit(0)

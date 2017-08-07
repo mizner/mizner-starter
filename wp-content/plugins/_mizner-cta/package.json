@@ -1,0 +1,31 @@
+{
+  "name": "gulp-press",
+  "version": "1.0.0",
+  "description": "Build Tools for WordPress via Gulp",
+  "main": "index.php",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "browser-sync": "^2.18.5",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "node-sass": "^3.13.1"
+  },
+  "scripts": {
+    "start": ""
+  },
+  "author": "Mizner",
+  "license": "ISC",
+  "homepage": "https://gist.github.com/Mizner/4a1fb77e0660f1123241d5669af873ac"
+}

@@ -1,0 +1,49 @@
+a#et_pb_toggle_builder {
+  color: #6c2eb9;
+  &:after {
+    content: "Use Layout Builder";
+    color: white;
+    position: absolute;
+    left: 63px;
+  }
+  &:before {
+    font-family: 'dashicons', sans-serif;
+    content: "\f136";
+    color: white;
+  }
+  &.et_pb_builder_is_used {
+    color: #00c3aa !important;
+  }
+  &.et_pb_builder_is_used:after {
+    content: "Use Default Editor";
+  }
+}
+
+#et_pb_layout {
+  h2.ui-sortable-handle:first-of-type {
+    &:after {
+      content: "Use Layout Builder";
+      color: white;
+    }
+    span {
+      display: none;
+    }
+    &:before {
+      font-family: 'dashicons', sans-serif;
+      content: "\f136";
+      color: white;
+    }
+  }
+}
+
+.et_pb_builder_settings .et_pb_prompt_modal {
+  h3:first-of-type {
+    color: transparent !important;
+    &:after {
+      position: absolute;
+      left: 1em;
+      content: "Layout Builder Settings";
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.loginform {
+  overflow: scroll;
+}
+
+div.login-wrapper {
+  padding: 0;
+}
+
+form.login,
+[name="loginForm"] {
+  background: white;
+  color: $gray;
+  min-width: 300px;
+  label {
+    color: $gray;
+  }
+  a {
+    color: $gray;
+  }
+  p {
+    margin: 0 0 .5em;
+  }
+  .login-username,
+  .login-password {
+    position: relative;
+    margin: 1em 0 .5em;
+    input {
+      width: 100%;
+      color: $gray;
+      background: white;
+      margin-bottom: .55em;
+      border-bottom: 2px solid $gray-light;
+    }
+    label {
+      position: absolute;
+      // top: .75em;
+      top: -.13em;
+      left: 0;
+      transition: 200ms ease all;
+    }
+    input:focus {
+      outline: none;
+      border-bottom: 2px solid $gray-dark;
+    }
+    input:focus ~ label,
+    input:valid ~ label {
+      font-size: .8em;
+      left: 0;
+      transform: translate(0px, -2em);
+    }
+  }
+  .login-remember {
+    font-size: .8em;
+  }
+  .login-lostpassword {
+    float: right;
+    font-size: .8em;
+  }
+}
+
+// Login form
+
+.loginform .gform_wrapper {
+  label {
+    display: none !important;
+  }
+  input:not([type="submit"]) {
+    background: transparent !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-radius: 0 !important;
+    border-width: 2px !important;
+    border-bottom: 2px solid $gray-light !important;
+  }
+  #field_1_9 {
+    label {
+      display: inline-block !important;
+    }
+    .ginput_container {
+      margin: 0;
+    }
+    li {
+      margin: 0 !important;
+    }
+    input {
+      height: .5em !important;
+    }
+  }
+}
+
+.loginform .popupInner {
+  align-items: flex-start;
+  margin-top: 20vh;
+}
+
+.loginform .options {
+  padding: 1em;
+  button {
+    font-family: $font-primary;
+    transition: 400ms ease all;
+  }
+  button.active {
+    box-shadow: 2px 3px 5px black;
+    background: $brandBlue;
+    color: white;
+  }
+}
+
+.loginform .options-container {
+  position: relative;
+  width: 400px;
+  > * {
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    &.active {
+      z-index: 99999999;
+      > * {
+        max-height: initial;
+      }
+    }
+    > * {
+      overflow: hidden;
+      max-height: 0px;
+      padding: 1em;
+      background: white;
+    }
+  }
+}
