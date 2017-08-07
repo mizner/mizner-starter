@@ -26,7 +26,7 @@ const JS_FILES = [
     "vendors/jquery-smooth-scroll.js", /* @todo: rewrite this in vanilla */
 ];
 
-const FILE_ARRAY = JS_FILES.map(function (file) {
+const FILE_ARRAY = JS_FILES.map((file) => {
     return path.join(src, "/scripts/") + file;
 });
 
@@ -100,7 +100,7 @@ gulp.task("watch", ["browser-sync"], () => {
     gulp.watch(path.join(src, "/styles/**/*.scss"), ["sass"]);
     gulp.watch(path.join(src, "/scripts/**/*.js"), ["js"]);
     gulp.watch("**/*.php", bs.reload);
-    gulp.watch("gulpfile.js").on("change", function () {
+    gulp.watch("gulpfile.js").on("change", () => {
         process.exit(0)
     })
 });
