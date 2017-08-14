@@ -1,11 +1,11 @@
 const path = require("path");
 
-const PROJECT = "starter";
+const PROJECT = "client-name";
 const TEST_SITE = "http://starter.dev";
 const THEME_NAME = "mizner-starter";
 
 const src = path.resolve("src");
-const dist = path.resolve("wp-content/themes/" + THEME_NAME + "/dist/");
+const dist = path.resolve("content/themes/" + THEME_NAME + "/dist/");
 
 const JS_FILES = [
     // 1st file loads first, 2nd, ect.
@@ -58,7 +58,7 @@ gulp.task("js", () => {
     gulp.src(FILE_ARRAY)
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(concat("output.min.js")) // concat pulls all our files together before minifying them
+        .pipe(concat("output.js")) // concat pulls all our files together before minifying them
         .pipe(sourcemaps.write())
         .pipe(babel({
             presets: ["es2015"]

@@ -1,17 +1,26 @@
-// -------------------------------
-// Base Color Helpers
-// -------------------------------
+/**
+ * Fonts
+ */
+
+$font-primary: 'Noto Sans', sans-serif;
+$font-secondary: 'Noto Sans', sans-serif;
+$font-accent: 'Noto Sans', sans-serif;
+
+/**
+ * Define Color Scheme (example:"$blue: #3386e2")
+ */
+
+
+
+/**
+ * Base Color Helpers
+ */
 
 $dark: #191919;
 $dark-clear: rgba(0, 0, 0, 0.60);
 $gray-dark: #414042;
 $gray-light: #e6e6e6;
 $gray: #868686;
-
-// -------------------------------
-// Define Color Scheme
-// -------------------------------
-// example:"$blue: #3386e2"
 
 // !important: content should never be more than 55-ish characters per line, it just becomes unreadable
 // https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/
@@ -28,12 +37,6 @@ $fields-height: 2em;
 $shadow: 0px 3px 1em rgba(0, 0, 0, 0.5);
 
 // General
-
-// -------------------------------
-// Fonts
-// -------------------------------
-$font-primary: 'Noto Sans', sans-serif;
-$font-secondary: 'Noto Sans', sans-serif;
 
 // Header
 $header-background: white;

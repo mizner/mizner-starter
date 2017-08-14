@@ -1,0 +1,8 @@
+tr.inactive[data-slug="advanced-custom-fields-pro"] {
+  background: #ffe57b;
+}
+
+tr.inactive[data-slug="advanced-custom-fields-pro"] .activate a {
+  font-weight: 600;
+  text-decoration: underline;
+}

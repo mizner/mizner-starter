@@ -84,7 +84,7 @@
 }
 
 @mixin dark {
-  h1, h2, h3, h4, h5, p, i {
+  h1, h2, h3, h4, h5, p, i, label {
     color: white;
     text-shadow: $shadow;
   }
@@ -143,11 +143,10 @@
   }
 }
 
-// -------------------------------
-// Flickity Slider
-// -------------------------------
-
 @mixin slider-base-rules($mobile-height, $height) {
+  /**
+   * Flickity Slider
+   */
   .carousel-cell {
     width: 100%;
     height: $mobile-height;
@@ -183,4 +182,16 @@
       background: white;
     }
   }
+}
+
+@mixin font-primary {
+  font-family: $font-primary;
+}
+
+@mixin font-secondary {
+  font-family: $font-secondary;
+}
+
+@mixin font-accent {
+  font-family: $font-accent;
 }
