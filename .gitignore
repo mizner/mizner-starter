@@ -1,8 +1,9 @@
 .DS_Store
 /.idea
 /wordpress/*
-/wp-content/uploads
-/wp-content/upgrade
+/**/uploads
+/**/upgrade
 wp-config.php
-/content/uploads
-/content/upgrade
+node_modules
+*debug.log
+yarn.lock
