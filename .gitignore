@@ -7,3 +7,4 @@ wp-config.php
 node_modules
 *debug.log
 yarn.lock
+config
