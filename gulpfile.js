@@ -1,32 +1,14 @@
 const path = require("path");
 
-const PROJECT = "client-name";
-const TEST_SITE = "http://starter.dev";
-const THEME_NAME = "mizner-starter";
+const config = require("./config.json");
+
+const project = config.Project;
+const testSite = "http://" + config.DevSite;
 
 const src = path.resolve("src");
-const dist = path.resolve("content/themes/" + THEME_NAME + "/dist/");
+const dist = path.resolve("content/themes/" + project + "/dist/");
 
-const JS_FILES = [
-    // 1st file loads first, 2nd, ect.
-    "polyfills/promise.min.js",
-    "polyfills/modernizr-custom.js",
-    "polyfills/object-fit-polyfill.js",
-    "skip-link-focus-fix.js",
-    "header/fixed-header.js",
-    "header/navigation/navigation.js",
-    "header/navigation/navigation-mobile.js",
-    "header/navigation/navigation-mobile-hide-button-on-scroll.js",
-    "popup-base.js",
-    "popup-login.js",
-    // "visible-in-browser.js",
-    "header/navigation/prevent-empty-nav-redirect.js",
-    "call-to-action-form-popup.js",
-    // jQuery Add-ons
-    "vendors/jquery-smooth-scroll.js", /* @todo: rewrite this in vanilla */
-];
-
-const FILE_ARRAY = JS_FILES.map((file) => {
+const jsFiles = config.Files.map((file) => {
     return path.join(src, "/scripts/") + file;
 });
 
@@ -49,13 +31,13 @@ gulp.task("sass", () => {
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
-        .pipe(rename(PROJECT + ".min.css"))
+        .pipe(rename(project + ".min.css"))
         .pipe(gulp.dest(dist))
         .pipe(bs.stream())
 });
 
 gulp.task("js", () => {
-    gulp.src(FILE_ARRAY)
+    gulp.src(jsFiles)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(concat("output.js")) // concat pulls all our files together before minifying them
@@ -64,7 +46,7 @@ gulp.task("js", () => {
             presets: ["es2015"]
         }))
         .pipe(uglify())
-        .pipe(rename(PROJECT + ".min.js"))
+        .pipe(rename(project + ".min.js"))
         .pipe(gulp.dest(dist))
         .pipe(bs.stream())
 });
@@ -74,21 +56,19 @@ gulp.task("production-sass", () => {
         .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer())
         .pipe(cssnano())
-        .pipe(rename(PROJECT + ".min.css"))
+        .pipe(rename(project + ".min.css"))
         .pipe(gulp.dest(dist));
 });
 
 gulp.task("browser-sync", () => {
     bs.init(["*"], {
-        proxy: TEST_SITE,
+        proxy: testSite,
         root: path.resolve(),
         open: {
             file: "index.php"
         }
     });
 });
-
-console.log(path.resolve());
 
 gulp.task("clean:dist", () => {
     return del([

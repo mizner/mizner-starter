@@ -81,7 +81,7 @@ define( 'WPMU_PLUGIN_DIR', dirname( __FILE__ ) . '/content/mu-plugins' );
 define( 'WPMU_PLUGIN_URL', WP_HOME . '/content/mu-plugins' );
 
 // Define the default theme.
-define( 'WP_DEFAULT_THEME', $config->DefaultTheme );
+define( 'WP_DEFAULT_THEME', $config->Project );
 
 /* Inserted by Local by Flywheel. See: http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy */
 if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
