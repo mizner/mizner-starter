@@ -99,5 +99,5 @@ require_once ABSPATH . 'wp-settings.php';
 
 
 if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
-	ini_set( 'error_log', __DIR__ . '/debug.log' );
+	ini_set( 'error_log', __DIR__ . '/logs/wp-error.log' );
 }

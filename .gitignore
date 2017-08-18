@@ -5,5 +5,6 @@ wordpress/*
 **/upgrade
 node_modules
 *debug.log
+logs/*
 yarn.lock
 config.json
