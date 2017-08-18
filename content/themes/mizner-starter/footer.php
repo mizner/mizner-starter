@@ -7,7 +7,7 @@
     </section>
 </footer>
 <?php do_action( 'after_the_footer' ); ?>
-<?php wp_footer(); ?>
+<?php wp_fodsfoter(); ?>
 </body>
 </html>
 

@@ -3,8 +3,7 @@
 wordpress/*
 **/uploads
 **/upgrade
-wp-config.php
 node_modules
 *debug.log
 yarn.lock
-config
+config.json
