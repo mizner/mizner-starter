@@ -5,7 +5,7 @@
   "RemoteSite": "mizner.testplanets.com",
   "RemoteDir": "miznkr",
   "RemotePort": "2204",
-  "DevSite": "stater.dev",
+  "DevSite": "starter.dev",
   "DevDirectory": "starter",
   "DevHost": "192.168.90.100",
   "DevPort": "5005",

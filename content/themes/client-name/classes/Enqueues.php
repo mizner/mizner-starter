@@ -33,7 +33,7 @@ class Enqueues {
 
 		wp_register_script( 'flickity', self::DIST . '/js/flickity.min.js', null, '2.0.5', true );
 
-		// wp_enqueue_style( Core\PROJECT, self::DIST . Core\PROJECT . '.min.css', [], Core\VERSION, 'all' );
+		wp_enqueue_style( Core\PROJECT, self::DIST . Core\PROJECT . '.min.css', [], Core\VERSION, 'all' );
 
 		wp_enqueue_script( Core\PROJECT . '-js', self::DIST . Core\PROJECT . '.min.js', [ 'jquery' ], Core\VERSION, true );
 

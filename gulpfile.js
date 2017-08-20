@@ -25,16 +25,20 @@ const gulp = require("gulp"),
     plumber = require("gulp-plumber"),
     del = require('del');
 
-gulp.task("sass", () => {
-    gulp.src(path.join(src, "/styles/**/*.scss"))
-        .pipe(sourcemaps.init())
-        .pipe(sass().on("error", sass.logError))
-        .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
-        .pipe(rename(project + ".min.css"))
-        .pipe(gulp.dest(dist))
-        .pipe(bs.stream())
-});
+const cssTask = (folder) => {
+    gulp.task("sass", () => {
+        gulp.src(path.join(src, folder) + "/main.scss")
+            .pipe(sourcemaps.init())
+            .pipe(sass().on("error", sass.logError))
+            .pipe(autoprefixer())
+            .pipe(sourcemaps.write())
+            .pipe(cssnano({zindex: false}))
+            .pipe(rename(project + ".min.css"))
+            .pipe(gulp.dest(dist))
+            .pipe(bs.stream())
+    });
+}
+
 
 gulp.task("js", () => {
     gulp.src(jsFiles)
@@ -48,16 +52,6 @@ gulp.task("js", () => {
         .pipe(uglify())
         .pipe(rename(project + ".min.js"))
         .pipe(gulp.dest(dist))
-        .pipe(bs.stream())
-});
-
-gulp.task("production-sass", () => {
-    gulp.src(path.join(src, "/styles/**/*.scss"))
-        .pipe(sass().on("error", sass.logError))
-        .pipe(autoprefixer())
-        .pipe(cssnano())
-        .pipe(rename(project + ".min.css"))
-        .pipe(gulp.dest(dist));
 });
 
 gulp.task("browser-sync", () => {
@@ -85,6 +79,16 @@ gulp.task("watch", ["browser-sync"], () => {
     })
 });
 
+
+gulp.task("w", ["browser-sync"], () => {
+    gulp.watch(path.join(src, "/public/**/**"), cssTask('public'));
+    // gulp.watch(path.join(src, "/scripts/**/*.js"), ["js"]);
+    gulp.watch("**/*.php", bs.reload);
+    gulp.watch("gulpfile.js").on("change", () => {
+        process.exit(0)
+    })
+});
+
 gulp.task("production", [
     "clean:dist",
     "production-sass",
@@ -92,7 +96,9 @@ gulp.task("production", [
 ]);
 
 gulp.task("default", [
-    "clean:dist",
-    "sass",
-    "js"
-]);
+        "clean:dist",
+        "sass",
+        "js"
+    ]
+);
+

@@ -1,31 +1,41 @@
 {
-  "name": "gulp-press",
+  "name": "js",
   "version": "1.0.0",
   "description": "Build Tools for WordPress via Gulp",
   "main": "index.php",
-  "dependencies": {},
-  "devDependencies": {
-    "babel-core": "^6.20.0",
-    "babel-preset-es2015": "^6.18.0",
-    "browser-sync": "^2.18.5",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
-    "node-sass": "^3.13.1"
-  },
   "scripts": {
-    "start": ""
+    "start": "webpack --watch --progress --colors",
+    "build": "webpack --progress --colors"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "postcss-scss": "^1.0.2",
+    "precss": "^2.0.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "author": "Mizner",
   "license": "ISC",
-  "homepage": "https://gist.github.com/Mizner/4a1fb77e0660f1123241d5669af873ac"
+  "homepage": "https://gist.github.com/mizner/mizner-starter"
 }
