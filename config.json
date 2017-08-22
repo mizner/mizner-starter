@@ -9,21 +9,8 @@
   "DevDirectory": "starter",
   "DevHost": "192.168.90.100",
   "DevPort": "5005",
-  "Files": [
-    "polyfills/promise.min.js",
-    "polyfills/modernizr-custom.js",
-    "polyfills/object-fit-polyfill.js",
-    "skip-link-focus-fix.js",
-    "header/fixed-header.js",
-    "header/navigation/navigation.js",
-    "header/navigation/navigation-mobile.js",
-    "header/navigation/navigation-mobile-hide-button-on-scroll.js",
-    "popup-base.js",
-    "popup-login.js",
-    "visible-in-browser.js",
-    "header/navigation/prevent-empty-nav-redirect.js",
-    "call-to-action-form-popup.js",
-    "vendors/jquery-smooth-scroll.js"
+  "watch": [
+
   ]
 }
 

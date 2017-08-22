@@ -1,52 +1,52 @@
-@mixin for-phone-only {
+@define-mixin for-phone-only {
   @media (max-width: 599px) {
     @content;
   }
 }
 
-@mixin for-tablet-portrait-up {
+@define-mixin for-tablet-portrait-up {
   @media (min-width: 600px) {
     @content;
   }
 }
 
-@mixin for-tablet-portait-only {
+@define-mixin for-tablet-portait-only {
   @media (min-width: 600px) and (max-width: 899px) {
     @content;
   }
 }
 
-@mixin for-tablet-landscape-up {
+@define-mixin for-tablet-landscape-up {
   @media (min-width: 900px) {
     @content;
   }
 }
 
-@mixin for-tablet-landscape-only {
+@define-mixin for-tablet-landscape-only {
   @media (min-width: 900px) and (max-width: 1199px) {
     @content;
   }
 }
 
-@mixin for-desktop-up {
+@define-mixin for-desktop-up {
   @media (min-width: 1200px) {
     @content;
   }
 }
 
-@mixin for-desktop-only {
+@define-mixin for-desktop-only {
   @media (min-width: 1200px) and (max-width: 1799px) {
     @content;
   }
 }
 
-@mixin for-big-desktop-up {
+@define-mixin for-big-desktop-up {
   @media (min-width: 1800px) {
     @content;
   }
 }
 
-@mixin bleed {
+@define-mixin bleed {
   margin-left: auto;
   margin-right: auto;
   @include for-phone-only {
@@ -66,7 +66,7 @@
   }
 }
 
-@mixin flexbox($value) {
+@define-mixin flexbox($value) {
   @if $value == center {
     justify-content: center;
     align-items: center;
@@ -83,14 +83,14 @@
   }
 }
 
-@mixin dark {
+@define-mixin dark {
   h1, h2, h3, h4, h5, p, i, label {
     color: white;
     text-shadow: $shadow;
   }
 }
 
-@mixin fun-button($color) {
+@define-mixin fun-button($color) {
   background: $color !important;
   border-color: $color !important;
   color: white !important;
@@ -107,7 +107,7 @@
   }
 }
 
-@mixin loop-page {
+@define-mixin loop-page {
   #content .content-area-wrapper {
     padding-top: 2em;
     padding-bottom: 1.5em;
@@ -143,7 +143,7 @@
   }
 }
 
-@mixin slider-base-rules($mobile-height, $height) {
+@define-mixin slider-base-rules($mobile-height, $height) {
   /**
    * Flickity Slider
    */
@@ -184,14 +184,14 @@
   }
 }
 
-@mixin font-primary {
+@define-mixin font-primary {
   font-family: $font-primary;
 }
 
-@mixin font-secondary {
+@define-mixin font-secondary {
   font-family: $font-secondary;
 }
 
-@mixin font-accent {
+@define-mixin font-accent {
   font-family: $font-accent;
 }

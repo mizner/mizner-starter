@@ -35,6 +35,8 @@ class Enqueues {
 
 		wp_enqueue_style( Core\PROJECT, self::DIST . Core\PROJECT . '.min.css', [], Core\VERSION, 'all' );
 
+		wp_enqueue_style( 'delete-this-later', self::DIST . 'example/admin.min.css', [], Core\VERSION, 'all' );
+
 		wp_enqueue_script( Core\PROJECT . '-js', self::DIST . Core\PROJECT . '.min.js', [ 'jquery' ], Core\VERSION, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

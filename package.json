@@ -4,8 +4,10 @@
   "description": "Build Tools for WordPress via Gulp",
   "main": "index.php",
   "scripts": {
-    "start": "webpack --watch --progress --colors",
-    "build": "webpack --progress --colors"
+    "browsersync": "node ./build/browsersync.js",
+    "watch": "webpack --config ./build/webpack.config.js --display-error-details  --watch --progress --colors",
+    "start": "npm run browsersync & npm run watch",
+    "build": "webpack --config ./build/webpack.config.js --display-error-details  --progress --colors"
   },
   "babel": {
     "presets": [
@@ -24,6 +26,8 @@
     "css-loader": "^0.28.5",
     "extract-text-webpack-plugin": "^3.0.0",
     "node-sass": "^4.5.3",
+    "postcss-easy-import": "^2.1.0",
+    "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
     "postcss-scss": "^1.0.2",
     "precss": "^2.0.0",
