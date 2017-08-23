@@ -1,0 +1,8 @@
+:root {
+  --width-standard: {
+    width: var(--container-default-width);
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+  };
+}

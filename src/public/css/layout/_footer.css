@@ -1,0 +1,6 @@
+#theFooter {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: var(--color-dark);
+  color: var(--color-light);
+}

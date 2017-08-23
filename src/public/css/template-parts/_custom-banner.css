@@ -1,0 +1,9 @@
+.custom-banner {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  & :--headings {
+    @apply --font-style-accent;
+  }
+}

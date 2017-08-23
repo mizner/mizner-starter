@@ -1,7 +1,7 @@
 <?php get_template_part( 'template-parts/custom-banner' ); ?>
-<div class="container">
-    <article class="the-content">
+<article class="the-content">
+    <div class="container">
 		<?php the_content(); ?>
-    </article>
-</div>
+    </div>
+</article>
 

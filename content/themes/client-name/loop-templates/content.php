@@ -1,4 +1,5 @@
-<article>
+<article class="content-preview">
+    <div class="container">
     <header>
         <a href="<?php the_permalink(); ?>">
             <h3><?php the_title(); ?></h3>
@@ -9,7 +10,7 @@
 		<?php the_category(); ?>
     </div>
     <p><?php the_excerpt(); ?></p>
-
+    </div>
 </article>
 
 

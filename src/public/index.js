@@ -1,3 +1,3 @@
-require('./css/main.pcss');
+require('./css/main.css');
 
 console.log('Hello');

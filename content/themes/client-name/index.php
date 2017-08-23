@@ -2,8 +2,6 @@
 
 <?php get_template_part( 'template-parts/custom-banner' ); ?>
 
-    <div class="container">
-
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -17,7 +15,5 @@
 			<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
 		<?php endif; ?>
-
-    </div>
 
 <?php get_footer(); ?>

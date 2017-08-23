@@ -1,6 +1,6 @@
 const config = require('../config.json');
-const browserSync = require('browser-sync');
-const browserSyncConfig = {
+const bs = require("browser-sync").create();
+const bsConfig = {
     host: 'localhost',
     proxy: 'http://' + config.DevSite,
     files: [
@@ -8,15 +8,16 @@ const browserSyncConfig = {
         {
             match: [
                 "content/**/*.php",
-                "content/**/*.js"
+              //  "content/**/*.js"
             ],
             fn: function (event, file) {
+                // console.log(file);
                 if (event === "change") {
-                    browserSync.reload();
+                  bs.reload();
                 }
             }
         }
     ]
 };
 
-browserSync(browserSyncConfig);
+bs.init(bsConfig);

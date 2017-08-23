@@ -10,38 +10,11 @@ const TEST_SITE = 'http://' + config.DevSite;
 const SRC_DIR = resolve(__dirname, '../src/');
 const BUILD_DIR = resolve(__dirname, '../content/themes/' + project + '/dist/');
 
-const cssConfig = {
-    fallback: 'style-loader',
-    use: [
-        {
-            loader: 'css-loader',
-            options: {
-                sourceMap: true
-            }
-        },
-        {
-            loader: 'postcss-loader',
-            options: {
-                parser: require('postcss-scss'),
-                //syntax: require('postcss-safe-parser'),
-                sourceMap: 'inline',
-                // sourceMap: true,
-                plugins: () => ([
-                    require('postcss-easy-import')({
-                        prefix: '_',
-                        extensions: '.pcss',
-                    }),
-                    require('autoprefixer')({
-                        browsers: 'last 2 versions'
-                    }),
-                    require('precss')(),
-                    require('cssnano')(),
-                    // require('reporter')(),
-                ]),
-            },
-        },
-    ]
-};
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const stylelintRules = require("./stylelint.config.js");
+
+
+const postcssConfig = require("./postcss.config.js");
 
 /**
  * Webpack Instance
@@ -82,13 +55,28 @@ const webpackInstance = options => {
                 {
                     // test: /\.(s*)css$/,
                     test: /\.(p*)css$/,
-                    use: ExtractCSS.extract(cssConfig)
+                    use: ExtractCSS.extract({
+                        fallback: 'style-loader',
+                        use: [
+                            {
+                                loader: 'css-loader',
+                                options: {
+                                    sourceMap: true
+                                }
+                            },
+                            {
+                                loader: 'postcss-loader',
+                                options: postcssConfig,
+                            },
+                        ]
+                    })
                 },
             ],
         },
 
         plugins: [
             ExtractCSS,
+            new StyleLintPlugin(stylelintRules),
         ],
     })
 };

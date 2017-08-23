@@ -28,7 +28,7 @@ use Mizner\Theme\NavWalker;
 		//		] );
 		wp_nav_menu( [
 			'theme_location' => 'primary-menu',
-			'walker'         => new NavWalker(),
+			// 'walker'         => new NavWalker(),
 			'container'      => false,
 			'items_wrap'     => '<nav id="%1$s"><ul>%3$s</ul></nav>'
 		] );
