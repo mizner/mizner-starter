@@ -5,9 +5,9 @@
   "main": "index.php",
   "scripts": {
     "browsersync": "node ./build/browsersync.js",
-    "watch": "webpack --config ./build/webpack.config.js --display-error-details  --watch --progress --colors",
+    "watch": "webpack --config ./build-tools/webpack.config.js --display-error-details  --watch --progress --colors",
     "start": "npm run browsersync & npm run watch",
-    "build": "webpack --config ./build/webpack.config.js --display-error-details  --progress --colors"
+    "build": "webpack --config ./build-tools/webpack.config.js --display-error-details  --progress --colors"
   },
   "babel": {
     "presets": [
@@ -19,6 +19,7 @@
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.1",
+    "babel-preset-babili": "^0.1.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.18.13",
