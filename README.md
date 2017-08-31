@@ -1,18 +1,33 @@
 Mizner Starter Theme
 =======================
-- First, get your local site running `Vagrant`, `Docker`, `Local by Flywheel`, `MAMP`, etc.
-- In your Terminal (iTerm, Hyper, etc.) cd until you're in the `themes` directory
-- Clone this Repo
-     - Run `git clone https://github.com/Mizner/mizner-starter`
+- This is built for `Local by Flywheel`, get an install up
+- Remove *Everything* from the `/public` folder
+- Open `/public` in PHPStorm 
+- Clone this Repo temp directory
+     - Run `git clone https://github.com/Mizner/mizner-starter temp`
+- Move files from `/temp` into `/public`
+     - Run ` mv temp/* ./` (make sure `.gitignore` moves) 
 - Recommended: delete the `.git` folder
      - Run `rm -rf .git` *(Make sure you're in the right directory)*
 - Install NPM packages 
      - (**Bonus**: use YARN!) run `yarn install` *it's just like `npm install`*
-- No more `bower`, that's so over.
-- Open `gulpfile.js` and edit the `const project = "starter";` to match your local url
-     - e.g. `http://myproject.dev` would mean you should change that line to `const project = "myproject";`
-- Open `functions.php` and edit `define( 'PROJECT', 'starter' );` to match your local url
-     - e.g. `http://myproject.dev` would mean you should change that line to `define( 'PROJECT', 'myproject' );`
+- (NEED TO FIX THIS) Create file `config.json` update with settings
+- Update Client-name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------- Deprecated Below This ---------
 - Run `gulp` to update your `/dist` folder to the new info
 - Now you should be able to run `gulp watch` and have BrowserSync stream `.css` changes and Reload on most `.js` and `.php` changes.  
 
