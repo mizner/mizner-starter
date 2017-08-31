@@ -83,10 +83,13 @@ define( 'WPMU_PLUGIN_URL', WP_HOME . '/content/mu-plugins' );
 // Define the default theme.
 define( 'WP_DEFAULT_THEME', $config->Project );
 
+
 /* Inserted by Local by Flywheel. See: http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy */
 if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
 	$_SERVER['HTTPS'] = 'on';
 }
+
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
@@ -98,6 +101,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once ABSPATH . 'wp-settings.php';
 
 
-if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
-	ini_set( 'error_log', __DIR__ . '/logs/wp-error.log' );
-}
+
+/**
+ * todo: fix logging path
+ * Right now this will log some things to our custom error log, but not others.
+ * For instance, if you _log from functions.php it'll spit out in the default debug.log
+ * It's annoying.
+ */
+//if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+//	$path = __DIR__ . '/logs/wp-error.log';
+//	@ini_set( 'error_log', $path );
+//}

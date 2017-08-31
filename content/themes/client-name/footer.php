@@ -1,5 +1,5 @@
 <?php do_action( 'before_the_footer' ) ?>
-<footer id="theFooter">
+<footer id="colophon">
     <div class="container">
         <section class="footer-info">
             <p class="copyright"><?php echo get_bloginfo(); ?> | All Rights Reserved © <?php echo date( "Y" ); ?></p>

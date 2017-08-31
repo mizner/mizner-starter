@@ -1,0 +1,22 @@
+ul.social-media {
+  padding-left: 0;
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  justify-content: center;
+  & li {
+    flex: 1;
+    text-align: center;
+    @media (--viewport-medium) {
+      text-align: right;
+    }
+  }
+  & a {
+
+
+  }
+  & svg {
+    max-width: 30px;
+    max-height: 30px;
+  }
+}

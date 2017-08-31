@@ -28,22 +28,27 @@ class Banner {
 		$fallback = ( has_header_image() ? get_header_image() : Core\URI . '/images/banner-default.jpg' );
 
 		if ( is_home() ) {
-			$blog_id = get_option( 'page_for_posts' );
-			$banner  = get_post_meta( $blog_id, 'banner_image', true );
+			$blog_id    = get_option( 'page_for_posts' );
+			$banner_id  = get_post_meta( $blog_id, 'banner_image', true );
+			$banner_uri = wp_get_attachment_image_src( $banner_id, 'full' );
 
-			return ( $banner ? $banner['url'] : $fallback );
+			return ( $banner_id ? $banner_uri[0] : $fallback );
 
 		} elseif ( is_singular() ) {
-			$post_id = get_the_ID();
-			$banner  = get_post_meta( $post_id, 'banner_image', true );
 
-			return ( $banner ? $banner['url'] : $fallback );
+			$post_id    = get_the_ID();
+			$banner_id  = get_post_meta( $post_id, 'banner_image', true );
+			$banner_uri = wp_get_attachment_image_src( $banner_id, 'full' );
+
+			return ( $banner_id ? $banner_uri[0] : $fallback );
 
 		} else {
 
-			return $fallback;
+			$uri = $fallback;
 
 		}
+
+		return ( $uri === null ? $fallback : $uri );
 	}
 
 	public function custom_fields() {

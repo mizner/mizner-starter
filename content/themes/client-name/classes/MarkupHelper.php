@@ -18,11 +18,11 @@ class MarkupHelper {
 	}
 
 	public function theme_content_open() {
-		echo '<main id="content" class="content-area">';
+		echo '<main id="content">';
 	}
 
 	public function theme_content_close() {
-		echo '</main><!--main-->';
+		echo '</main><!-- #theContent-->';
 	}
 
 	public function theme_wrapper_open() {
@@ -30,7 +30,6 @@ class MarkupHelper {
 	}
 
 	public function theme_wrapper_close() {
-		echo '</div><!--wrapper-->';
+		echo '</div><!-- #wrapper-->';
 	}
-
 }

@@ -1,3 +1,5 @@
-require('./scss/main.scss');
+require('./postcss/main.css');
 
-console.log('Hello');
+const hello = 'postcss loaded';
+
+console.log(hello);

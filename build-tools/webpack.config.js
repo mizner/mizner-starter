@@ -4,7 +4,8 @@ const {resolve} = require('path');
 const {join} = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const BabiliPlugin = require("babili-webpack-plugin");
+const BabiliOptions = require("./babili.config");
 
 const project = config.Project;
 const TEST_SITE = 'http://' + config.DevSite;
@@ -12,17 +13,6 @@ const SRC_DIR = resolve(__dirname, '../assets/');
 const THEME_DIR = resolve(__dirname, '../content/themes/' + project);
 const PLUGIN_DIR = resolve(__dirname, '../content/plugins/');
 
-// const StyleLintPlugin = require('stylelint-webpack-plugin');
-// const stylelintRules = require("./stylelint.config.js");
-
-
-// const postcssConfig = require("./postcss.config.js");
-
-/**
- * Webpack Instance
- * @param options
- * @returns {{entry, output: {filename: string, path}, devtool: string, stats: {children: boolean}, module: {rules: [null,null]}, plugins: [null]}}
- */
 const webpackInstance = options => {
 
     let ExtractCSS = new ExtractTextPlugin({
@@ -30,6 +20,50 @@ const webpackInstance = options => {
         // disable: false,
         // allChunks: true
     });
+
+    let plugins = [
+        ExtractCSS,
+    ];
+
+    if ('production' === process.env.NODE_ENV) {
+        plugins.push(
+            new BabiliPlugin(BabiliOptions)
+        )
+    }
+
+    let js = {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: 'babel-loader',
+                options: {presets: ["es2015"]},
+            }
+        ],
+    };
+
+    let css = {
+        test: /\.css$/, // or test: /\.(s*)css$/,
+        use: ExtractCSS.extract({
+            fallback: 'style-loader',
+            use: [
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true,
+                    }
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        config: {
+                            path: resolve(__dirname)
+                        }
+                    }
+                },
+            ]
+        })
+    };
 
     return ({
         entry: options.entry,
@@ -44,54 +78,46 @@ const webpackInstance = options => {
         },
         module: {
             rules: [
-                {
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    use: [{
-                        loader: 'babel-loader',
-                        options: {presets: ["es2015", "babili"]},
-                    }],
-                },
-                {
-                    test: /\.(s*)css$/, // or test: /\.(s*)css$/,
-                    use: ExtractCSS.extract({
-                        fallback: 'style-loader',
-                        use: [{
-                            loader: 'css-loader',
-                            options: {sourceMap: true}
-                        }, {
-                            loader: 'sass-loader'
-                        },
-                            // {
-                            //     loader: 'postcss-loader',
-                            //     options: postcssConfig,
-                            // },
-                        ]
-                    })
-                },
+                js,
+                css,
             ],
         },
+        plugins,
 
-        plugins: [
-            ExtractCSS,
-            // new StyleLintPlugin(stylelintRules),
-        ],
     })
 };
 
 const Theme = webpackInstance({
-    'entry': join(SRC_DIR, '/public/index'),
+    'entry': join(SRC_DIR, '/public/index.js'),
     'filename': project,
     'output': join(THEME_DIR, '/dist/'),
 });
 
+const Crit = webpackInstance({
+    'entry': join(SRC_DIR, '/public/index.js'),
+    'filename': 'crit',
+    'output': join(THEME_DIR, '/dist/'),
+});
+
 const Admin = webpackInstance({
-    'entry': join(SRC_DIR, '/admin/index'),
+    'entry': join(SRC_DIR, '/admin/index.js'),
     'filename': 'admin',
+    'output': join(THEME_DIR, '/dist/'),
+});
+
+const CustomDashboard = webpackInstance({
+    'entry': join(SRC_DIR, '/admin/index'),
+    'filename': 'custom-dashboard',
     'output': join(PLUGIN_DIR, '/_mizner-custom-dashboard/dist'),
 });
 
 module.exports = [
+    // Theme Files
     Theme,
-    // Admin,
+    Crit,
+    Admin,
+
+    // Plugin Files
+    CustomDashboard,
+
 ];

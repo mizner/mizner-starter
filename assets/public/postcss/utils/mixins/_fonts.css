@@ -1,0 +1,16 @@
+@define-mixin font-style-headings {
+  font-family: var(--font-primary);
+  line-height: var(--line-height-base);
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+@define-mixin font-style-paragraph {
+  font-family: var(--font-secondary);
+}
+
+@define-mixin font-style-accent {
+  font-family: var(--font-accent);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}

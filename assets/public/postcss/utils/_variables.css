@@ -1,0 +1,37 @@
+:root {
+  /**
+  Font Settings
+   */
+  --font-primary: "Helvetica Neue", Verdana, Arial, sans-serif;
+  --font-secondary: "Baskerville", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --font-accent: "Brush Script MT", sans-serif;
+  --font-base-size: 16px;
+  --line-height-base: 120%;
+  --text-shadow-default: 1px 4px 5px rgba(0, 0, 0, 0.67);
+
+  /**
+   Custom colors
+    */
+
+  --white-offwhite: #ecf0f1;
+  --gray-dark: #333333;
+  --green-jungle: #27ae60;
+  --blue-light: #3498db;
+  --cinnabar: #e74c3c;
+
+  /**
+   Theme Colors
+    */
+
+  --color-dark: var(--gray-dark);
+  --color-light: var(--white-offwhite);
+  --color-main: var(--gray-dark);
+  --color-background: var(--white-offwhite);
+  --color-links: var(--blue-light);
+  --color-links-hover: var(--blue-light);
+  --color-links-nav: var(--green-jungle);
+
+  --container-default-width: 90%;
+  --container-max-width: 1200px;
+
+}

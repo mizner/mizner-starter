@@ -1,0 +1,6 @@
+@define-mixin width-standard {
+  width: 90%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}

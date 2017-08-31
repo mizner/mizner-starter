@@ -10,11 +10,13 @@ define( __NAMESPACE__ . '\TEXTDOMAIN', 'mizner-theme' );
 define( __NAMESPACE__ . '\PATH', get_template_directory() );
 define( __NAMESPACE__ . '\URI', get_template_directory_uri() );
 define( __NAMESPACE__ . '\VERSION', '1.0' );
-define( __NAMESPACE__ . '\GOOGLE_FONTS', 'Noto+Sans|Noto+Serif' );
+// define( __NAMESPACE__ . '\GOOGLE_FONTS', 'Noto+Sans|Noto+Serif' );
 
 add_action( 'after_setup_theme', function () {
+
 	$setup         = new Setup();
 	$extras        = new Extras();
+	$image_sizes   = new ImageSizes();
 	$admin         = new Admin();
 	$markup_helper = new MarkupHelper();
 	$schema        = new Schema();
@@ -26,9 +28,9 @@ add_action( 'after_setup_theme', function () {
 	$acf    = new ACF();
 	$banner = new Banner();
 
-
 	$setup->init();
 	$extras->init();
+	$image_sizes->init();
 	$admin->init();
 	$markup_helper->init();
 	$schema->init();
@@ -37,5 +39,4 @@ add_action( 'after_setup_theme', function () {
 	$woocommerce->init();
 	$acf->init();
 	$banner->init();
-
 } );

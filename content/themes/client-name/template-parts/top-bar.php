@@ -1,5 +1,3 @@
-<div class="the-header-top-bar">
-	<div class="the-header-top-bar-container">
-		<i class="fa fa-phone"></i>
-	</div>
+<div class="masthead_top-bar">
+		<i class="fa fa-phone">981723908710923784</i>
 </div>
