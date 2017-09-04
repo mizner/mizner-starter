@@ -4,6 +4,8 @@
 @import "utils/mixins/_media-queries.css";
 @import "utils/mixins/_fonts.css";
 @import "utils/mixins/_container.css";
+@import "utils/mixins/_slider.css";
+@import "utils/mixins/_invisible.css";
 // Vendors
 @import "vendors/_sanitize.css";
 @import "base/_wordpress.css";
@@ -11,8 +13,11 @@
 @import "base/_global.css";
 // Components
 @import "components/_embed-container.css";
+@import "components/_search-form.css";
 // Layout
 @import "layout/_header.css";
+@import "layout/main-navigation/_main-navigation.css";
+
 @import "layout/_footer.css";
 @import "layout/_sidebar.css";
 // Loop Templates

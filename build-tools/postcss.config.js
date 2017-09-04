@@ -18,10 +18,8 @@ module.exports = (e) => {
                 ],
             },
             'postcss-custom-media': {},
-            'postcss-nesting': {},
             'postcss-mixins': {},
-
-
+            'postcss-nesting': {},
         },
     });
 

@@ -6,11 +6,13 @@
 get_header();
 
 
-get_template_part( 'template-parts/custom-banner' );
+// get_template_part( 'template-parts/custom-banner' );
 get_template_part( 'components/posts-slider' );
 
 while ( have_posts() ) : the_post();
 
+	the_content();
+	the_content();
 	the_content();
 
 //		get_template_part( 'components/hero/hero' );

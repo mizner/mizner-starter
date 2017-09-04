@@ -15,6 +15,7 @@ define( __NAMESPACE__ . '\VERSION', '1.0' );
 add_action( 'after_setup_theme', function () {
 
 	$setup         = new Setup();
+	$critical      = new Critical();
 	$extras        = new Extras();
 	$image_sizes   = new ImageSizes();
 	$admin         = new Admin();
@@ -28,6 +29,7 @@ add_action( 'after_setup_theme', function () {
 	$acf    = new ACF();
 	$banner = new Banner();
 
+	$critical->init();
 	$setup->init();
 	$extras->init();
 	$image_sizes->init();

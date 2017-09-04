@@ -1,0 +1,54 @@
+.main_navigation > button i {
+  display: inline-block;
+  width: 60px;
+  height: 45px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.main_navigation > button i span {
+  display: inline-block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--color-light);
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.main_navigation > button i span:nth-child(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.main_navigation > button i span:nth-child(2) {
+  top: 18px;
+  transform-origin: left center;
+}
+
+.main_navigation > button i span:nth-child(3) {
+  top: 36px;
+  transform-origin: left center;
+}
+
+.main_navigation[aria-expanded="true"] > button i {
+  & span:nth-child(1) {
+    transform: rotate(45deg);
+    top: -3px;
+    left: 8px;
+  }
+  & span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  & span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 39px;
+    left: 8px;
+  }
+}

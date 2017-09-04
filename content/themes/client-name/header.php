@@ -1,6 +1,6 @@
 <?php get_template_part( 'template-parts/head' ); ?>
 <?php do_action( 'before_the_header' ); ?>
-<header id="masthead" class="main-header">
+<header id="masthead" class="main_header">
     <div class="container">
 		<?php // get_template_part( 'template-parts/top-bar' ); ?>
 		<?php get_template_part( 'template-parts/header/header-primary' ); ?>

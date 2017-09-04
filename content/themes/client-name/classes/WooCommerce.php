@@ -9,8 +9,11 @@ class WooCommerce {
 			return;
 		}
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 		$this->enqueues();
-		$this->markup();
+		// $this->markup();
 	}
 
 	public function markup() {

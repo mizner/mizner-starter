@@ -1,0 +1,20 @@
+.main_navigation > button {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-size: 3.1em;
+  text-transform: uppercase;
+  width: 100%;
+  padding-top: .25em;
+  padding-bottom: .25em;
+  line-height: 1em;
+  @media (--viewport-medium) {
+    display: none;
+  }
+  & > * {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  & > span {
+    padding-bottom: 5px;
+  }
+}

@@ -2,8 +2,8 @@
   /**
   Font Settings
    */
-  --font-primary: "Helvetica Neue", Verdana, Arial, sans-serif;
-  --font-secondary: "Baskerville", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --font-primary: "BrandonGrotesque-Medium", "Helvetica Neue", Verdana, Arial, sans-serif;
+  --font-secondary: "BrandonGrotesque-Medium", "Baskerville", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   --font-accent: "Brush Script MT", sans-serif;
   --font-base-size: 16px;
   --line-height-base: 120%;
@@ -13,8 +13,10 @@
    Custom colors
     */
 
-  --white-offwhite: #ecf0f1;
+  --white-offwhite: #ffffff;
   --gray-dark: #333333;
+  --gray-light: #c3c3c3;
+  --gray: #8a8a8a;
   --green-jungle: #27ae60;
   --blue-light: #3498db;
   --cinnabar: #e74c3c;

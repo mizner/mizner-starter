@@ -1,0 +1,29 @@
+.main_navigation {
+  & li.has-children > a {
+    padding-right: 40px;
+  }
+
+  & li.has-children a > button {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    border: 1px dotted var(--gray-light);
+    color: var(--gray-light);
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  & li.has-children.expanded a > button {
+    background-color: var(--color-dark);
+  }
+}
+

@@ -1,16 +1,48 @@
-#masthead {
-  & .container {
-    display: flex;
-    flex-flow: row wrap;
+#masthead .container {
+  display: flex;
+  flex-flow: row wrap;
+  & > * {
+    flex: 1 100%;
+    @media (--viewport-medium) {
+      flex: 1;
+    }
+  }
+}
+
+.masthead_primary {
+  @media (--viewport-medium) {
+    max-width: 20%;
   }
 }
 
 #logo {
-  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   & a {
     display: block;
   }
+  & img,
   & svg {
     width: 100%;
   }
+}
+
+.masthead_secondary {
+  display: flex;
+  flex-flow: row wrap;
+  & > * {
+    flex: 1 100%;
+    @media (--viewport-medium) {
+      flex: 1 100%;
+    }
+  }
+}
+
+.masthead_secondary-middle {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
 }

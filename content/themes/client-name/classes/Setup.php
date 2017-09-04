@@ -57,9 +57,9 @@ class Setup {
 	public function menus() {
 
 		register_nav_menus( [
-			'primary-menu'   => __( 'Primary Menu', Core\TEXTDOMAIN ),
-			'secondary-menu' => __( 'Secondary Menu', Core\TEXTDOMAIN ),
-			'footer-menu'    => __( 'Footer Menu', Core\TEXTDOMAIN ),
+			'primary_menu'   => __( 'Primary Menu', Core\TEXTDOMAIN ),
+			'secondary_menu' => __( 'Secondary Menu', Core\TEXTDOMAIN ),
+			'footer_menu'    => __( 'Footer Menu', Core\TEXTDOMAIN ),
 		] );
 
 	}

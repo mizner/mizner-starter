@@ -1,4 +1,5 @@
 <?php
+define('WP_CACHE', false); // Added by WP Rocket
 
 /**
  * This uses config.json for environment variables
@@ -55,7 +56,7 @@ define( 'JETPACK_DEV_DEBUG', true );
 
 function _log( $message ) {
 	if ( WP_DEBUG === true ) {
-		error_log( "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*" );
+		error_log( "-----------------------------------------------------------------------" );
 		foreach ( func_get_args() as $arg ) {
 			if ( is_array( $arg ) || is_object( $arg ) ) {
 				error_log( print_r( $arg, true ) );
@@ -63,14 +64,13 @@ function _log( $message ) {
 				error_log( $arg );
 			}
 		}
-		error_log( "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*" );
 	}
 }
 
 
 // Define Site URL: WordPress in a subdirectory.
-defined( 'WP_SITEURL' ) or define( 'WP_SITEURL', 'http://' . HTTP_HOST . '/wordpress' );
-defined( 'WP_HOME' ) or define( 'WP_HOME', 'http://' . HTTP_HOST );
+defined( 'WP_SITEURL' ) or define( 'WP_SITEURL', 'https://' . HTTP_HOST . '/wordpress' );
+defined( 'WP_HOME' ) or define( 'WP_HOME', 'https://' . HTTP_HOST );
 
 // Define path and url for wp-content
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );

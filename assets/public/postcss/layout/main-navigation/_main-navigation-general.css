@@ -1,0 +1,20 @@
+// Navigation Colors
+.main_navigation {
+  & ul {
+    padding-left: 0;
+  }
+  & > ul > li {
+    position: relative;
+    padding-left: 1em;
+    @media (--viewport-medium) {
+      display: inline-block;
+    //margin-left: -4px;
+    }
+  }
+  & a {
+    color: var(--green-jungle);
+    font-family: var(--font-primary);
+    font-weight: 200;
+    letter-spacing: 2px;
+  }
+}

@@ -94,7 +94,7 @@ const Theme = webpackInstance({
 });
 
 const Crit = webpackInstance({
-    'entry': join(SRC_DIR, '/public/index.js'),
+    'entry': join(SRC_DIR, '/public/crit.js'),
     'filename': 'crit',
     'output': join(THEME_DIR, '/dist/'),
 });

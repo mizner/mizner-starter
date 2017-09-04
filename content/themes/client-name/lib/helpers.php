@@ -24,12 +24,13 @@ function title() {
 		if ( is_shop() ):
 			$title = get_the_title( get_option( 'woocommerce_shop_page_id' ) );
 		elseif ( is_archive() ):
-			$title = single_term_title();
+			$title = str_replace( 'Category:', '', get_the_archive_title() );
 		else:
 			$title = get_the_title();
 		endif;
 
-	elseif ( is_singular() ) :
+	elseif ( is_singular() || is_page() ) :
+
 		$title = get_the_title();
 
 	elseif ( is_archive() ) :
