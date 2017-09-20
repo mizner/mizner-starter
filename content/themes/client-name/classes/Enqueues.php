@@ -22,12 +22,12 @@ class Enqueues {
 
 		if ( 'theme-js' === $handle ) {
 
-			$tag = str_replace( " src", " async='async' src", $tag );
+			$tag = str_replace( ' src', ' async="async" src', $tag );
 		}
 
 		if ( 'jquery' === $handle ) {
 
-			$tag = str_replace( " src", " async='async' src", $tag );
+			$tag = str_replace( ' src', ' async="async" src', $tag );
 		}
 
 		return $tag;
@@ -54,7 +54,7 @@ class Enqueues {
 		if ( ! is_user_logged_in() ) {
 			// comment out the next two lines to load the local copy of jQuery
 			wp_deregister_script( 'jquery' );
-			wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', false, '1.12.4', true );
+			wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', false, '1.12.4', false );
 		}
 	}
 

@@ -19,13 +19,13 @@ function in_array_r( $needle, $haystack, $strict = false ) {
 
 function title() {
 
-	if ( 'product' === get_post_type() ): // is_post_type_archive( 'product' )
+	if ( 'product' === get_post_type() ) : // is_post_type_archive( 'product' )
 		// WooCommerce Support
-		if ( is_shop() ):
+		if ( is_shop() ) :
 			$title = get_the_title( get_option( 'woocommerce_shop_page_id' ) );
-		elseif ( is_archive() ):
+		elseif ( is_archive() ) :
 			$title = str_replace( 'Category:', '', get_the_archive_title() );
-		else:
+		else :
 			$title = get_the_title();
 		endif;
 
@@ -35,16 +35,16 @@ function title() {
 
 	elseif ( is_archive() ) :
 		$title = single_term_title( '', false );
-		if ( is_post_type_archive() ):
+		if ( is_post_type_archive() ) :
 			$title = str_replace( 'Archives:', '', get_the_archive_title() );
 		endif;
 
-	elseif ( is_home() ):
+	elseif ( is_home() ) :
 		$blog  = get_option( 'page_for_posts' );
 		$title = get_the_title( $blog );
-	elseif ( is_search() ):
+	elseif ( is_search() ) :
 		$title = 'Search Results for: ' . get_search_query();
-	else:
+	else :
 		$title = null;
 	endif;
 

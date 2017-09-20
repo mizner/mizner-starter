@@ -1,5 +1,4 @@
 <?php
-define('WP_CACHE', false); // Added by WP Rocket
 
 /**
  * This uses config.json for environment variables
@@ -26,8 +25,8 @@ $config = get_config();
  */
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
-	define( 'DB_HOST', $config->DevHost . ':' . $config->DevPort );
-	define( 'HTTP_HOST', $config->DevSite );
+	define( 'DB_HOST', $config->dev_host . ':' . $config->dev_port );
+	define( 'HTTP_HOST', $config->dev_site );
 } else {
 	define( 'DB_HOST', 'localhost' );
 	define( 'HTTP_HOST', $_SERVER['HTTP_HOST'] );
@@ -54,23 +53,9 @@ define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 define( 'JETPACK_DEV_DEBUG', true );
 
-function _log( $message ) {
-	if ( WP_DEBUG === true ) {
-		error_log( "-----------------------------------------------------------------------" );
-		foreach ( func_get_args() as $arg ) {
-			if ( is_array( $arg ) || is_object( $arg ) ) {
-				error_log( print_r( $arg, true ) );
-			} else {
-				error_log( $arg );
-			}
-		}
-	}
-}
-
-
 // Define Site URL: WordPress in a subdirectory.
-defined( 'WP_SITEURL' ) or define( 'WP_SITEURL', 'https://' . HTTP_HOST . '/wordpress' );
-defined( 'WP_HOME' ) or define( 'WP_HOME', 'https://' . HTTP_HOST );
+defined( 'WP_SITEURL' ) or define( 'WP_SITEURL', 'http://' . HTTP_HOST . '/wordpress' );
+defined( 'WP_HOME' ) or define( 'WP_HOME', 'http://' . HTTP_HOST );
 
 // Define path and url for wp-content
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
@@ -81,14 +66,12 @@ define( 'WPMU_PLUGIN_DIR', dirname( __FILE__ ) . '/content/mu-plugins' );
 define( 'WPMU_PLUGIN_URL', WP_HOME . '/content/mu-plugins' );
 
 // Define the default theme.
-define( 'WP_DEFAULT_THEME', $config->Project );
-
+define( 'WP_DEFAULT_THEME', $config->project );
 
 /* Inserted by Local by Flywheel. See: http://codex.wordpress.org/Administration_Over_SSL#Using_a_Reverse_Proxy */
-if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
+if ( 'https' === isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] ) {
 	$_SERVER['HTTPS'] = 'on';
 }
-
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -99,16 +82,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
-
-
-
-/**
- * todo: fix logging path
- * Right now this will log some things to our custom error log, but not others.
- * For instance, if you _log from functions.php it'll spit out in the default debug.log
- * It's annoying.
- */
-//if ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
-//	$path = __DIR__ . '/logs/wp-error.log';
-//	@ini_set( 'error_log', $path );
-//}

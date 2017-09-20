@@ -40,9 +40,12 @@
   }
 }
 
-.masthead_secondary-middle {
+.masthead_secondary-section {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  @media (--viewport-medium) {
+    justify-content: flex-end;
+    align-items: center;
+  }
 }

@@ -26,11 +26,17 @@
     };
 
     Object.keys(hasChildren).forEach((listItem) => {
-        let button = hasChildren[listItem].querySelector('button');
+        let item = hasChildren[listItem];
+        let button = item.querySelector('button');
         button.addEventListener('click', (e) => {
             e.preventDefault();
-            hasChildren[listItem].classList.toggle('expanded');
-            svgIconArrows(button)
+            item.classList.toggle('expanded');
+            svgIconArrows(button);
+            item.addEventListener('focusout', (e) => {
+                if (!e.relatedTarget) {
+                    item.classList.remove('expanded');
+                }
+            })
         });
     })
 

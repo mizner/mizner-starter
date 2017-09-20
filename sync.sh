@@ -10,12 +10,12 @@ function _jsonValue(){
 
 function _rsync() {
 
-     Username=$(_jsonValue 'RemoteUsername');
-     Password=$(_jsonValue 'RemotePassword');
-     RemoteSite=$(_jsonValue 'RemoteSite');
-     RemoteDir=$(_jsonValue 'RemoteDir');
-     Port=$(_jsonValue 'RemotePort');
-     LocalDir=$(_jsonValue 'DevDirectory');
+     Username=$(_jsonValue 'remote_username');
+     Password=$(_jsonValue 'remote_password');
+     RemoteSite=$(_jsonValue 'remote_site');
+     RemoteDir=$(_jsonValue 'remote_dir');
+     Port=$(_jsonValue 'remote_port');
+     LocalDir=$(_jsonValue 'dev_directory');
 
     # source config;
 

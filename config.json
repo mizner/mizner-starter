@@ -1,14 +1,14 @@
 {
-  "Project": "client-name",
-  "RemoteUsername": "miznkr",
-  "RemotePassword": "2!x7MW3J1EEyH2X",
-  "RemoteSite": "mizner.testplanets.com",
-  "RemoteDir": "miznkr",
-  "RemotePort": "2204",
-  "DevSite": "starter.dev",
-  "DevDirectory": "starter",
-  "DevHost": "192.168.90.100",
-  "DevPort": "5005",
+  "project": "client-name",
+  "remote_username": "miznkr" ,
+  "remote_password": "2!x7MW3J1EEyH2X",
+  "remote_site": "mizner.testplanets.com",
+  "remote_dir": "miznkr",
+  "remote_port": "2204",
+  "dev_site": "starter.dev",
+  "dev_directory": "starter",
+  "dev_host": "192.168.90.100",
+  "dev_port": "5005",
   "watch": [
   ]
 }

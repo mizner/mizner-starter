@@ -12,3 +12,9 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 include ('inc/removals.php');
+
+/**
+ * todo: Kill Ads
+ *  apply_filters( 'jetpack_just_in_time_msgs', false )
+ * Add this somewhere
+ */

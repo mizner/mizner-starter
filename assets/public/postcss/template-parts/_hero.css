@@ -1,0 +1,106 @@
+.hero {
+  background-color: var(--color-dark);
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 90%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  & h1 {
+    color: var(--color-light);
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.9);
+  }
+}
+
+.hero .flickity-slider {
+  & .carousel-cell {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    @media (--viewport-medium) {
+      height: 500px;
+    }
+    & img {
+      min-width: 100%;
+      @media (--viewport-medium) {
+        min-height: 500px;
+        width: 100%;
+      }
+    }
+  }
+
+  & .carousel-cell-inner, & article {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & .flickity-prev-next-button {
+    background: transparent;
+    &:hover {
+      background: transparent;
+    }
+    & .arrow {
+      fill: white;
+    }
+  }
+
+  & .flickity-page-dots {
+    bottom: 25px;
+    & .dot {
+      background: white;
+    }
+  }
+}
+
+// -------------------------------
+// Hero Static
+// -------------------------------
+.hero-static {
+  .hero-static-background {
+    img {
+      height: 700px;
+      max-width: 100%;
+    }
+  }
+}
+
+.hero-rotate-images {
+
+  @mixin slider-base-rules; //first value is mobile height, second value is desktop height
+  & img {
+    opacity: .7;
+  }
+  & .carousel-cell {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+}
+
+.hero .flickity-slider {
+  transform: none !important;
+}
+
+.hero .carousel-cell {
+  left: 0 !important;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.hero .carousel-cell.is-selected {
+  opacity: 1;
+  z-index: 0
+}
+
+.hero .button {
+
+}

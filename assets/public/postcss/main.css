@@ -9,6 +9,8 @@
 // Vendors
 @import "vendors/_sanitize.css";
 @import "base/_wordpress.css";
+// Polyfill
+@import "polyfill/_object-fit.css";
 // Base
 @import "base/_global.css";
 // Components
@@ -16,6 +18,7 @@
 @import "components/_search-form.css";
 // Layout
 @import "layout/_header.css";
+@import "layout/_top-bar.css";
 @import "layout/main-navigation/_main-navigation.css";
 
 @import "layout/_footer.css";
@@ -28,6 +31,7 @@
 // Template Parts
 @import "template-parts/_custom-banner.css";
 @import "template-parts/_social-media.css";
+@import "template-parts/_hero.css";
 // Plugins
 @import "plugins/_woocommerce.css";
 // Pages

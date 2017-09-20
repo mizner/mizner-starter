@@ -17,6 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    //pointer-events: none;
+    //cursor: default;
     & svg {
       height: 100%;
       width: 100%;

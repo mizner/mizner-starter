@@ -10,7 +10,6 @@ define( __NAMESPACE__ . '\TEXTDOMAIN', 'mizner-theme' );
 define( __NAMESPACE__ . '\PATH', get_template_directory() );
 define( __NAMESPACE__ . '\URI', get_template_directory_uri() );
 define( __NAMESPACE__ . '\VERSION', '1.0' );
-// define( __NAMESPACE__ . '\GOOGLE_FONTS', 'Noto+Sans|Noto+Serif' );
 
 add_action( 'after_setup_theme', function () {
 
@@ -26,8 +25,13 @@ add_action( 'after_setup_theme', function () {
 	// WooCommerce Support
 	$woocommerce = new WooCommerce();
 	// ACF Support
-	$acf    = new ACF();
+	$acf = new ACF();
+
+	// ACF Meta
 	$banner = new Banner();
+	new TemplateParts\Hero();
+	new PageTemplates\Homepage();
+
 
 	$critical->init();
 	$setup->init();

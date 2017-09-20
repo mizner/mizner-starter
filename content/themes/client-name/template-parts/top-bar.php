@@ -1,3 +1,6 @@
-<div class="masthead_top-bar">
-		<i class="fa fa-phone">981723908710923784</i>
-</div>
+
+<section class="masthead_top-bar">
+    <div class="container">
+        <p>Example Top Bar Content!</p>
+     </div>
+</section>

@@ -7,6 +7,5 @@
 			<?php the_date(); ?>
 			<?php the_category(); ?>
         </div>
-        <p><?php echo get_excerpt( 40 ); ?></p>
     </article>
 </div>

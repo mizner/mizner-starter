@@ -8,12 +8,12 @@ const bsConfig = {
         {
             match: [
                 "content/**/*.php",
-              //  "content/**/*.js"
+                //  "content/**/*.js"
             ],
-            fn: function (event, file) {
+            fn: (event, file) => {
                 // console.log(file);
                 if (event === "change") {
-                  bs.reload();
+                    bs.reload();
                 }
             }
         }
