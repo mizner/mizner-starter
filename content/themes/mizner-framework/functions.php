@@ -5,8 +5,7 @@ namespace Mizner\Theme;
 require_once 'lib/helpers.php';
 require_once 'lib/autoload.php';
 
-define( __NAMESPACE__ . '\PROJECT', 'client-name' );
-define( __NAMESPACE__ . '\TEXTDOMAIN', 'mizner-theme' );
+define( __NAMESPACE__ . '\PROJECT', 'mizner-framework' );
 define( __NAMESPACE__ . '\PATH', get_template_directory() );
 define( __NAMESPACE__ . '\URI', get_template_directory_uri() );
 define( __NAMESPACE__ . '\VERSION', '1.0' );
