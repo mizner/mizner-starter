@@ -1,7 +1,6 @@
 .DS_Store
 .idea
 wordpress/*
-advanced-custom-fields-pro
 **/uploads
 **/upgrade
 node_modules
@@ -10,3 +9,16 @@ logs/*
 yarn.lock
 config.json
 npm-debug.log
+
+# WP Plugins
+advanced-custom-fields-pro
+jetpack
+wp-migrate-db
+woocommerce
+woocommerce-services
+simple-page-ordering
+gravity-forms
+customize-pane-resizer
+bb-plugin
+akismet
+seo-framework
