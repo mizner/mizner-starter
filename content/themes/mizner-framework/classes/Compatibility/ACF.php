@@ -33,11 +33,6 @@ class ACF {
 
 	}
 
-
-	public function add_notice() {
-
-	}
-
 	public function not_installed() {
 		$class       = 'notice notice-error';
 		$message     = __( 'This theme requires:', 'mizner-framework' );
