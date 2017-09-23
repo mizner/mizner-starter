@@ -51,39 +51,32 @@ class acf_location_user_role extends acf_location {
 		$user_role = acf_maybe_get( $screen, 'user_role' );
 		
 		
-		// if user_role is supplied (3rd party compatibility)
-		if( $user_role ) {
-			
-			// do nothing
+		// not a user
+		if( !$user_id ) return false;
 		
-		// user_id (expected)	
-		} elseif( $user_id ) {
-			
-			// new user
-			if( $user_id == 'new' ) {
-				
-				// set to default role
-				$user_role = get_option('default_role');
-			
-			// existing user
-			} elseif( user_can($user_id, $rule['value']) ) {
-				
-				// set to value and allow match
-				$user_role = $rule['value'];
-				
-			}
 		
-		// else
+		// new user
+		if( $user_id == 'new' ) {
+			
+			$result = ( $rule['value'] == get_option('default_role') );
+			
 		} else {
 			
-			// not a user	
-			return false;
+			$result = ( user_can($user_id, $rule['value']) );
 			
 		}
 		
 		
+		// reverse if 'not equal to'
+        if( $rule['operator'] === '!=' ) {
+	        	
+        	$result = !$result;
+        
+        }
+		
+		
 		// match
-		return $this->compare( $user_role, $rule );
+		return $result;
 		
 	}
 	

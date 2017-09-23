@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 wordpress/*
+advanced-custom-fields-pro
 **/uploads
 **/upgrade
 node_modules

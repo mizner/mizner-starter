@@ -1021,35 +1021,6 @@ class acf_field_repeater extends acf_field {
 	
 	
 	/*
-	*  validate_any_field
-	*
-	*  This function will add compatibility for the 'column_width' setting
-	*
-	*  @type	function
-	*  @date	30/1/17
-	*  @since	5.5.6
-	*
-	*  @param	$field (array)
-	*  @return	$field
-	*/
-	
-	function validate_any_field( $field ) {
-		
-		// width has changed
-		if( isset($field['column_width']) ) {
-			
-			$field['wrapper']['width'] = acf_extract_var($field, 'column_width');
-			
-		}
-		
-		
-		// return
-		return $field;
-		
-	}
-	
-	
-	/*
 	*  prepare_field_for_export
 	*
 	*  description
@@ -1064,7 +1035,7 @@ class acf_field_repeater extends acf_field {
 	
 	function prepare_field_for_export( $field ) {
 		
-		// bail early if no sub fields
+		// bail early if no layouts
 		if( empty($field['sub_fields']) ) return $field;
 		
 		
@@ -1093,12 +1064,16 @@ class acf_field_repeater extends acf_field {
 	
 	function prepare_field_for_import( $field ) {
 		
-		// bail early if no sub fields
+		// bail early if no layouts
 		if( empty($field['sub_fields']) ) return $field;
 		
 		
-		// vars
-		$sub_fields = $field['sub_fields'];
+		// var
+		$extra = array();
+		
+		
+		// extract sub fields
+		$sub_fields = acf_extract_var( $field, 'sub_fields');
 		
 		
 		// reset field setting
@@ -1106,19 +1081,63 @@ class acf_field_repeater extends acf_field {
 		
 		
 		// loop
-		foreach( $sub_fields as &$sub_field ) {
+		foreach( array_keys($sub_fields) as $i ) {
 			
+			// extract sub field
+			$sub_field = acf_extract_var( $sub_fields, $i );
+					
+			
+			// attributes
 			$sub_field['parent'] = $field['key'];
+			
+			
+			// append to extra
+			$extra[] = $sub_field;
 			
 		}
 		
 		
-		// merge
-		array_unshift($sub_fields, $field);
+		// extra
+		if( !empty($extra) ) {
+			
+			array_unshift($extra, $field);
+			
+			return $extra;
+			
+		}
 		
 		
 		// return
-		return $sub_fields;
+		return $field;
+		
+	}
+	
+	
+	/*
+	*  validate_any_field
+	*
+	*  This function will add compatibility for the 'column_width' setting
+	*
+	*  @type	function
+	*  @date	30/1/17
+	*  @since	5.5.6
+	*
+	*  @param	$field (array)
+	*  @return	$field
+	*/
+	
+	function validate_any_field( $field ) {
+		
+		// width has changed
+		if( isset($field['column_width']) ) {
+			
+			$field['wrapper']['width'] = acf_extract_var($field, 'column_width');
+			
+		}
+		
+		
+		// return
+		return $field;
 		
 	}
 

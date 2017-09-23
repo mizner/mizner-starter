@@ -358,10 +358,6 @@ class acf_form_taxonomy {
 		$('#acf-form-data').after( $orig.clone() );
 		
 		
-		// reset unload
-		acf.unload.off();
-		
-		
 		// action for 3rd party customization
 		acf.do_action('append', $('#addtag'));
 		
