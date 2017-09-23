@@ -2,37 +2,41 @@
 
 namespace Mizner\Theme;
 
-use Mizner\Theme as Core;
-
 class Setup {
+
+	/**
+	 * Initializer.
+	 */
 	public function init() {
-		$this->content_width();
 		$this->menus();
 		$this->general();
-		$this->sidebars();
+		$this->register_sidebars();
 		add_action( 'customize_register', [ $this, 'customizer_options' ], 99 );
 	}
 
-	public function content_width() {
-		if ( ! isset( $content_width ) ) {
-			$content_width = 1080; /* pixels */
-		}
-	}
-
+	/**
+	 * Customizer options.
+	 *
+	 * @param $wp_customize
+	 */
 	public function customizer_options( $wp_customize ) {
 		$wp_customize->remove_section( 'themes' );
 		$wp_customize->remove_section( 'custom_css' );
 	}
 
+	/**
+	 * General.
+	 */
 	public function general() {
 
 		add_theme_support( 'title-tag' );
 
 		add_theme_support( 'automatic-feed-links' );
 
-		add_theme_support( "post-thumbnails" );
+		add_theme_support( 'post-thumbnails' );
 
-		add_theme_support( 'html5', [
+		add_theme_support( 'html5',
+			[
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -42,34 +46,40 @@ class Setup {
 		);
 
 		add_theme_support( 'custom-header',
-			apply_filters( 'custom_header_args', array(
+			apply_filters( 'custom_header_args', [
 				'default-image' => '',
 				'width'         => 1400,
 				'height'        => 450,
 				'flex-height'   => true,
-			) )
+			] )
 		);
 
 		add_theme_support( 'custom-logo' );
 
 	}
 
+	/**
+	 * Menus
+	 */
 	public function menus() {
 
 		register_nav_menus( [
-			'primary_menu'   => __( 'Primary Menu', Core\TEXTDOMAIN ),
-			'secondary_menu' => __( 'Secondary Menu', Core\TEXTDOMAIN ),
-			'footer_menu'    => __( 'Footer Menu', Core\TEXTDOMAIN ),
+			'primary_menu'   => __( 'Primary Menu', 'mizner-framework' ),
+			'secondary_menu' => __( 'Secondary Menu', 'mizner-framework' ),
+			'footer_menu'    => __( 'Footer Menu', 'mizner-framework' ),
 		] );
 
 	}
 
-	public function sidebars() {
+	/**
+	 * Register Sidebars.
+	 */
+	public function register_sidebars() {
 
 		register_sidebar( [
-			'name'          => esc_html__( 'Sidebar', Core\TEXTDOMAIN ),
+			'name'          => esc_html__( 'Sidebar', 'mizner-framework' ),
 			'id'            => 'sidebar',
-			'description'   => esc_html__( 'Add widgets here.', Core\TEXTDOMAIN ),
+			'description'   => esc_html__( 'Add widgets here.', 'mizner-framework' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -79,25 +89,25 @@ class Setup {
 		register_sidebar( [
 			'id'    => 'footer-one',
 			'class' => 'footer-widget',
-			'name'  => __( 'Footer One', Core\TEXTDOMAIN ),
+			'name'  => __( 'Footer One', 'mizner-framework' ),
 		] );
 
 		register_sidebar( [
 			'id'    => 'footer-two',
 			'class' => 'footer-widget',
-			'name'  => __( 'Footer Two', Core\TEXTDOMAIN ),
+			'name'  => __( 'Footer Two', 'mizner-framework' ),
 		] );
 
 		register_sidebar( [
 			'id'    => 'footer-three',
 			'class' => 'footer-widget',
-			'name'  => __( 'Footer Three', Core\TEXTDOMAIN ),
+			'name'  => __( 'Footer Three', 'mizner-framework' ),
 		] );
 
 		register_sidebar( [
 			'id'    => 'footer-four',
 			'class' => 'footer-widget',
-			'name'  => __( 'Footer Four', Core\TEXTDOMAIN ),
+			'name'  => __( 'Footer Four', 'mizner-framework' ),
 		] );
 
 	}
