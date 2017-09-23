@@ -1,37 +1,46 @@
 <?php
-/**
- * Plugin Name: (Mizner) - SMTP Mailer
- * Plugin URI: http://mizner.io
- * Description:
- * Version: 1.0
- * Author: Michael Mizner
- * Author URI: http://mizner.io
- * License:
- */
 
 namespace Mizner\SMTP;
 
-defined( 'WPINC' ) || die;
-
+/**
+ * Class SMTP
+ */
 class SMTP {
 
+	/**
+	 * Postmark API Key
+	 */
 	public $postmark_api;
+	/**
+	 * From Email
+	 */
 	public $from_email;
+	/**
+	 * From Name
+	 */
 	public $from_name;
 
-
+	/**
+	 * SMTP constructor.
+	 */
 	public function __construct() {
 		$this->settings();
 		add_action( 'phpmailer_init', [ $this, 'mailer' ] );
 		add_filter( 'wp_mail_content_type', [ $this, 'content_type' ] );
 	}
 
+	/**
+	 * Settings
+	 */
 	function settings() {
 		$this->postmark_api = '92b7d8f8-d916-4603-aa83-bff967ba59e3';
 		$this->from_email   = 'no-reply@knoxweb.com';
 		$this->from_name    = 'Knoxweb';
 	}
 
+	/**
+	 * PHP Mailer
+	 */
 	function mailer( $phpmailer ) {
 
 		$phpmailer->isSMTP();
@@ -47,12 +56,11 @@ class SMTP {
 
 	}
 
+	/**
+	 * Content Type.
+	 * Consider using 'multipart/mixed' or 'text/html' in return statement.
+	 */
 	function content_type( $content_type ) {
-		// return 'multipart/mixed';
-		// return 'text/html';
 		return 'text/plain';
 	}
 }
-
-new SMTP();
-
