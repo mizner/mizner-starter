@@ -1,4 +1,9 @@
 <?php
+/**
+ * Functionality for Theme.
+ *
+ * @package Mizner\Theme
+ */
 
 namespace Mizner\Theme;
 
@@ -8,7 +13,6 @@ require_once 'lib/autoload.php';
 define( __NAMESPACE__ . '\PROJECT', 'mizner-framework' );
 define( __NAMESPACE__ . '\PATH', get_template_directory() );
 define( __NAMESPACE__ . '\URI', get_template_directory_uri() );
-define( __NAMESPACE__ . '\VERSION', '1.0' );
 
 add_action( 'after_setup_theme', function () {
 
@@ -21,18 +25,17 @@ add_action( 'after_setup_theme', function () {
 	$schema        = new Schema();
 	$social        = new Social();
 	$enqueues      = new Enqueues();
-	// WooCommerce Support
+	// WooCommerce Support.
 	$woocommerce = new Compatibility\WooCommerce();
-	// ACF Support
+	// ACF Support.
 	$acf = new Compatibility\ACF();
 
-	// ACF Meta
+	// ACF Meta.
 	$banner = new Banner();
 	new TemplateParts\Hero();
 	new PageTemplates\Homepage();
 
 	new Fonts();
-
 
 	$critical->init();
 	$setup->init();
@@ -45,4 +48,16 @@ add_action( 'after_setup_theme', function () {
 	$enqueues->init();
 	$woocommerce->init();
 	$banner->init();
+} );
+
+
+add_action( 'get_header', function () {
+	?>
+
+	<div class="special-nav-bar">
+		<ul>
+			<li></li>
+		</ul>
+	</div>
+	<?php
 } );

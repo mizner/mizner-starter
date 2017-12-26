@@ -28,6 +28,6 @@ class Fonts {
 			<?php include_once PATH . '/css/fonts.css'; ?>
 		</style>
 		<?php
-		echo wp_kses_allowed_html( ob_get_clean() );
+		echo ob_get_clean();
 	}
 }

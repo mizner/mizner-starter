@@ -44,9 +44,9 @@ class ACF {
 			'<div class="%1$s"><p>%2$s <a target="_blank" href="%3$s"><strong>%4$s</strong></a> %5$s</p></div>',
 			esc_attr( $class ),
 			esc_html( $message ),
-			$plugin_link,
+			esc_url( $plugin_link ),
 			esc_html( $plugin_name ),
-			$message_end
+			esc_html( $message_end )
 		);
 	}
 

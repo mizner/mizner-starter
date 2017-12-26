@@ -10,6 +10,7 @@ function check_installed_plugins_by_name( $name, $array ) {
 
 }
 
+
 function title() {
 
 	if ( 'product' === get_post_type() ) : // is_post_type_archive( 'product' )

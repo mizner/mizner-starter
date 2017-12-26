@@ -2,11 +2,9 @@
 
 namespace Mizner\Theme;
 
-use Mizner\Theme as Core;
-
 class Enqueues {
 
-	const DIST = Core\URI . '/dist/';
+	const DIST = URI . '/dist/';
 
 	public function init() {
 
@@ -38,7 +36,7 @@ class Enqueues {
 		ob_start();
 		?>
 		<style type="text/css"
-		       data-type="critical-styles"><?php include_once Core\PATH . '/dist/crit.min.css' ?></style>
+		       data-type="critical-styles"><?php include_once PATH . '/dist/crit.min.css' ?></style>
 		<?php
 		echo ob_get_clean();
 	}
@@ -62,7 +60,7 @@ class Enqueues {
 
 		// Scripts
 
-		wp_enqueue_script( 'theme-js', self::DIST . Core\PROJECT . '.min.js', [ 'jquery' ], Core\VERSION, true );
+		wp_enqueue_script( 'theme-js', self::DIST . PROJECT . '.min.js', [ 'jquery' ], '1.0', true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -74,16 +72,16 @@ class Enqueues {
 
 	public function site_wide_footer() {
 
-		wp_enqueue_style( Core\PROJECT, self::DIST . Core\PROJECT . '.min.css', [], Core\VERSION, 'all' );
+		wp_enqueue_style( PROJECT, self::DIST . PROJECT . '.min.css', [], '1.0', 'all' );
 
 	}
 
 	public function admin_enqueue() {
 
 		// General Theme CSS Sheet, not required for frontend since we're handing that in the dist folder via webpack
-		wp_enqueue_style( Core\TEXTDOMAIN . '-info', get_stylesheet_uri() );
+		wp_enqueue_style( PROJECT . '-info', get_stylesheet_uri() );
 
-		wp_enqueue_style( Core\TEXTDOMAIN . '-admin', Core\URI . '/dist/admin.min.css' );
+		wp_enqueue_style( PROJECT . '-admin', URI . '/dist/admin.min.css' );
 
 	}
 
